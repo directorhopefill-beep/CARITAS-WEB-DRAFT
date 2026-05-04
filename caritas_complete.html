@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caritas of Hope Foundation — Nairobi, Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --M:#C2185B;--MD:#880E4F;--ML:#F8BBD9;--MX:#FCE4EC;
+  --S:#0288D1;--SD:#01579B;--SL:#B3E5FC;--SX:#E1F5FE;
+  --O:#F57C00;--OL:#FFF3E0;--P:#7B1FA2;--PL:#F3E5F5;
+  --G:#388E3C;--GL:#E8F5E9;
+  --W:#FFFFFF;--OW:#FAFAFA;--D:#1A1A2E;--GR:#6B7280;--GLT:#F3F4F6;
+  --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);color:var(--D);background:var(--W);overflow-x:hidden;}
+
+/* PAGE SYSTEM */
+.page{display:none;min-height:100vh;}
+.page.active{display:block;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--M);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;box-shadow:0 2px 20px rgba(194,24,91,0.35);}
+.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;}
+.nav-logo-icon{width:42px;height:42px;border-radius:50%;background:var(--W);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-logo-icon svg{width:26px;height:26px;}
+.nav-logo-text strong{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--W);line-height:1.1;display:block;}
+.nav-logo-text span{font-size:0.62rem;color:var(--ML);letter-spacing:0.1em;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:0.15rem;}
+.nb{color:rgba(255,255,255,0.88);font-size:0.84rem;font-weight:500;padding:0.48rem 0.8rem;border-radius:6px;transition:all 0.2s;background:none;border:none;cursor:pointer;font-family:var(--fb);}
+.nb:hover,.nb.active{color:var(--W);background:rgba(255,255,255,0.15);}
+.nb.donate-btn{background:var(--W)!important;color:var(--M)!important;font-weight:700!important;padding:0.48rem 1.2rem!important;border-radius:24px!important;}
+.nb.donate-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,0.2);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--W);border-radius:2px;transition:all 0.3s;}
+.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--MD);z-index:999;padding:1rem;flex-direction:column;gap:0.4rem;border-top:1px solid rgba(255,255,255,0.15);}
+.mob-menu.open{display:flex;}
+.mob-menu .nb{width:100%;text-align:left;padding:0.65rem 1rem;}
+
+/* COMMONS */
+.container{max-width:1160px;margin:0 auto;}
+.pt{padding-top:68px;}
+.ey{font-size:0.74rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--M);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.5rem;}
+.ey::before{content:'';display:block;width:22px;height:2px;background:var(--M);}
+.h2{font-family:var(--fd);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--D);line-height:1.2;margin-bottom:1rem;}
+.sub{font-size:0.97rem;color:var(--GR);line-height:1.8;max-width:640px;}
+.tc{text-align:center;}.tc .ey{justify-content:center;}.tc .ey::before{display:none;}.tc .sub{margin:0 auto;}
+.btn-m{display:inline-block;background:var(--M);color:var(--W);padding:0.8rem 1.9rem;border-radius:50px;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;font-family:var(--fb);transition:all 0.25s;text-decoration:none;}
+.btn-m:hover{background:var(--MD);transform:translateY(-2px);box-shadow:0 8px 20px rgba(194,24,91,0.3);}
+.btn-s{display:inline-block;background:var(--S);color:var(--W);padding:0.8rem 1.9rem;border-radius:50px;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;font-family:var(--fb);transition:all 0.25s;}
+.btn-s:hover{background:var(--SD);transform:translateY(-2px);}
+.btn-w{background:var(--W);color:var(--M);padding:0.8rem 1.9rem;border-radius:50px;font-weight:600;font-size:0.9rem;border:none;cursor:pointer;font-family:var(--fb);transition:all 0.25s;display:inline-block;}
+.btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.btn-ol{background:transparent;color:var(--W);padding:0.78rem 1.9rem;border-radius:50px;font-weight:500;font-size:0.9rem;border:none;cursor:pointer;font-family:var(--fb);transition:all 0.25s;display:inline-block;border:2px solid rgba(255,255,255,0.5);}
+.btn-ol:hover{background:rgba(255,255,255,0.12);border-color:var(--W);}
+.rv{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.rv.vis{opacity:1;transform:none;}
+
+/* PAGE HERO */
+.ph{padding:7.5rem 2rem 4.5rem;background:linear-gradient(135deg,var(--MD) 0%,var(--M) 52%,#1565C0 100%);position:relative;overflow:hidden;text-align:center;}
+.ph::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(2,136,209,0.28) 0%,transparent 60%);}
+.ph-r{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.08);}
+.ph-r:nth-child(1){width:500px;height:500px;top:-180px;right:-100px;}
+.ph-r:nth-child(2){width:300px;height:300px;bottom:-80px;left:-60px;}
+.ph-inner{position:relative;z-index:2;max-width:760px;margin:0 auto;}
+.bc{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.76rem;color:rgba(255,255,255,0.6);margin-bottom:1.2rem;text-transform:uppercase;letter-spacing:0.08em;}
+.bc-link{color:rgba(255,255,255,0.6);cursor:pointer;transition:color 0.2s;background:none;border:none;font-family:var(--fb);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.08em;}
+.bc-link:hover{color:var(--W);}
+.ph h1{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:var(--W);line-height:1.1;margin-bottom:1.1rem;}
+.ph p{font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.75;font-weight:300;max-width:580px;margin:0 auto;}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--MD),var(--M) 55%,#1565C0);padding:4.5rem 2rem;text-align:center;color:var(--W);}
+.cta-band h2{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.3rem);font-weight:700;margin-bottom:0.75rem;}
+.cta-band p{font-size:0.97rem;opacity:0.85;margin-bottom:2rem;}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{background:var(--D);color:var(--W);padding:4rem 2rem 2rem;}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1160px;margin:0 auto;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+.fb strong{font-family:var(--fd);font-size:1.15rem;display:block;margin-bottom:0.75rem;color:var(--ML);}
+.fb p{font-size:0.83rem;opacity:0.6;line-height:1.75;margin-bottom:1.25rem;}
+.fsoc{display:flex;gap:0.6rem;}
+.fsb{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);font-size:0.82rem;transition:all 0.2s;cursor:pointer;}
+.fsb:hover{background:var(--M);border-color:var(--M);color:var(--W);}
+.fc h4{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--ML);margin-bottom:1rem;font-weight:600;}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem;}
+.fc li{color:rgba(255,255,255,0.58);font-size:0.83rem;cursor:pointer;transition:color 0.2s;}
+.fc li:hover{color:var(--W);}
+.fb-bot{max-width:1160px;margin:1.5rem auto 0;display:flex;align-items:center;justify-content:space-between;font-size:0.78rem;color:rgba(255,255,255,0.38);}
+.fb-bot em{color:var(--ML);font-style:normal;}
+
+/* TOAST */
+#toast{position:fixed;bottom:2rem;right:2rem;background:var(--D);color:var(--W);padding:0.9rem 1.5rem;border-radius:12px;font-size:0.85rem;z-index:9999;transform:translateY(100px);opacity:0;transition:all 0.4s ease;border-left:4px solid var(--M);max-width:340px;line-height:1.5;}
+#toast.show{transform:translateY(0);opacity:1;}
+
+/* ══ HOME ══ */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--MD) 0%,var(--M) 45%,#1565C0 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:7rem 2rem 4rem;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,0.05) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(2,136,209,0.22) 0%,transparent 55%);}
+.hc{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.1);animation:pr 6s ease-in-out infinite;}
+.hc:nth-child(1){width:420px;height:420px;top:-110px;right:-80px;animation-delay:0s;}
+.hc:nth-child(2){width:620px;height:620px;top:-210px;right:-210px;animation-delay:1.5s;}
+.hc:nth-child(3){width:280px;height:280px;bottom:-60px;left:-60px;animation-delay:3s;}
+@keyframes pr{0%,100%{opacity:.15;transform:scale(1);}50%{opacity:.28;transform:scale(1.04);}}
+.hero-inner{position:relative;z-index:2;max-width:860px;text-align:center;}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.24);color:var(--W);border-radius:24px;padding:0.4rem 1rem;font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;margin-bottom:1.6rem;animation:fid 0.8s ease both;}
+.hbadge-dot{width:6px;height:6px;background:var(--ML);border-radius:50%;display:inline-block;}
+.hero-inner h1{font-family:var(--fd);font-weight:900;font-size:clamp(2.8rem,6vw,5rem);color:var(--W);line-height:1.1;margin-bottom:1.4rem;animation:fiu 0.9s 0.2s ease both;}
+.hero-inner h1 em{font-style:normal;color:var(--ML);}
+.hero-inner .hs{font-size:clamp(0.97rem,2.2vw,1.15rem);color:rgba(255,255,255,0.82);line-height:1.75;max-width:620px;margin:0 auto 2.4rem;font-weight:300;animation:fiu 0.9s 0.35s ease both;}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fiu 0.9s 0.5s ease both;}
+@keyframes fid{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fiu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.stat-bar{background:var(--D);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;}
+.si{display:flex;flex-direction:column;align-items:center;padding:0.5rem 2.5rem;border-right:1px solid rgba(255,255,255,0.1);}
+.si:last-child{border-right:none;}
+.sn{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--ML);}
+.sl{font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem;}
+.mission-g{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:center;}
+.mc{background:linear-gradient(135deg,var(--MD),var(--M));border-radius:20px;padding:3rem;color:var(--W);position:relative;overflow:hidden;}
+.mc::after{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:rgba(255,255,255,0.07);border-radius:50%;}
+.mc blockquote{font-family:var(--fd);font-size:1.45rem;line-height:1.55;font-style:italic;position:relative;z-index:1;}
+.mc cite{display:block;margin-top:1.4rem;font-size:0.83rem;font-style:normal;color:var(--ML);font-weight:500;}
+.mf{position:absolute;bottom:-20px;right:-20px;background:var(--S);color:var(--W);border-radius:14px;padding:1.1rem 1.4rem;box-shadow:0 8px 24px rgba(2,136,209,0.35);}
+.mf strong{display:block;font-size:1.7rem;font-family:var(--fd);}
+.mf span{font-size:0.75rem;opacity:0.85;}
+.val-items{display:flex;flex-direction:column;gap:1.1rem;}
+.vi{display:flex;gap:1rem;align-items:flex-start;padding:1.2rem;border-radius:12px;border:1px solid var(--GLT);transition:all 0.25s;cursor:default;}
+.vi:hover{border-color:var(--ML);background:var(--MX);}
+.vi-ico{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:var(--MX);}
+.vi-t strong{display:block;font-size:0.93rem;font-weight:600;margin-bottom:0.22rem;}
+.vi-t p{font-size:0.82rem;color:var(--GR);line-height:1.6;}
+.pill-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:1.4rem;}
+.pill-c{background:var(--W);border-radius:16px;border:1px solid rgba(0,0,0,0.06);overflow:hidden;transition:all 0.3s;cursor:pointer;}
+.pill-c:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.1);}
+.pill-h{height:96px;display:flex;align-items:center;justify-content:center;font-size:2.7rem;position:relative;}
+.pill-h::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;}
+.p-hl .pill-h{background:#FCE4EC;}.p-hl .pill-h::after{background:var(--M);}
+.p-ed .pill-h{background:#E3F2FD;}.p-ed .pill-h::after{background:var(--S);}
+.p-hm .pill-h{background:#FFF3E0;}.p-hm .pill-h::after{background:var(--O);}
+.p-in .pill-h{background:#F3E5F5;}.p-in .pill-h::after{background:var(--P);}
+.p-en .pill-h{background:#E8F5E9;}.p-en .pill-h::after{background:var(--G);}
+.pill-b{padding:1.3rem 1.1rem;}
+.pill-b h3{font-size:0.93rem;font-weight:600;margin-bottom:0.35rem;}
+.pill-b p{font-size:0.8rem;color:var(--GR);line-height:1.6;}
+.pill-lk{display:inline-flex;align-items:center;gap:3px;font-size:0.78rem;font-weight:600;color:var(--M);margin-top:0.7rem;}
+.imp-band{background:linear-gradient(135deg,var(--MD),var(--M) 55%,var(--SD));padding:4rem 2rem;text-align:center;color:var(--W);}
+.imp-band h2{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.3rem);font-weight:700;margin-bottom:0.65rem;}
+.imp-band>p{font-size:1rem;opacity:0.82;margin-bottom:2.2rem;}
+.imp-nums{display:flex;justify-content:center;flex-wrap:wrap;max-width:860px;margin:0 auto;}
+.in-item{padding:1.2rem 2.2rem;border-right:1px solid rgba(255,255,255,0.2);}
+.in-item:last-child{border-right:none;}
+.in-item strong{display:block;font-family:var(--fd);font-size:2.4rem;font-weight:900;}
+.in-item span{font-size:0.76rem;opacity:0.72;text-transform:uppercase;letter-spacing:0.08em;}
+.prog-g{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.prog-c{border-radius:16px;padding:2rem;border:1px solid rgba(0,0,0,0.06);transition:all 0.3s;cursor:pointer;}
+.prog-c:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.1);}
+.prog-c.pm{background:var(--MX);border-color:var(--ML);}
+.prog-c.ps{background:var(--SX);border-color:var(--SL);}
+.ptag{display:inline-block;padding:0.22rem 0.7rem;border-radius:20px;font-size:0.7rem;font-weight:600;text-transform:uppercase;margin-bottom:0.9rem;}
+.pm .ptag{background:var(--M);color:var(--W);}
+.ps .ptag{background:var(--S);color:var(--W);}
+.prog-c h3{font-family:var(--fd);font-size:1.2rem;font-weight:700;margin-bottom:0.55rem;}
+.prog-c p{font-size:0.86rem;color:var(--GR);line-height:1.7;}
+.prog-st{margin-top:1.1rem;font-size:0.8rem;font-weight:600;}
+.pm .prog-st{color:var(--MD);}
+.ps .prog-st{color:var(--SD);}
+.inv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.inv-c{background:var(--W);border-radius:16px;padding:2rem;text-align:center;border:1px solid rgba(0,0,0,0.06);transition:all 0.3s;}
+.inv-c:hover{box-shadow:0 12px 32px rgba(0,0,0,0.08);transform:translateY(-4px);}
+.inv-ico{width:58px;height:58px;border-radius:50%;margin:0 auto 1.1rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+.ii1{background:var(--MX);}
+.ii2{background:var(--SX);}
+.ii3{background:var(--GL);}
+.inv-c h3{font-size:1rem;font-weight:600;margin-bottom:0.45rem;}
+.inv-c p{font-size:0.83rem;color:var(--GR);line-height:1.65;margin-bottom:1.1rem;}
+.ng{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.nc{border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.06);transition:all 0.3s;background:var(--W);cursor:pointer;}
+.nc:hover{box-shadow:0 12px 30px rgba(0,0,0,0.09);transform:translateY(-3px);}
+.ni{height:154px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.ni1{background:var(--MX);}
+.ni2{background:var(--SX);}
+.ni3{background:var(--GL);}
+.nb2{padding:1.2rem;}
+.ntag{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--M);margin-bottom:0.45rem;}
+.nb2 h3{font-size:0.93rem;font-weight:600;margin-bottom:0.45rem;line-height:1.4;}
+.nb2 p{font-size:0.8rem;color:var(--GR);line-height:1.6;}
+.ndate{font-size:0.72rem;color:var(--GR);margin-top:0.7rem;}
+
+/* ══ ABOUT ══ */
+.page-tabs{background:var(--W);border-bottom:1px solid rgba(0,0,0,0.08);position:sticky;top:68px;z-index:900;display:flex;justify-content:center;overflow-x:auto;}
+.pt-btn{padding:1rem 1.4rem;font-size:0.84rem;font-weight:500;color:var(--GR);border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:var(--fb);}
+.pt-btn:hover{color:var(--M);}
+.pt-btn.active{color:var(--M);border-bottom-color:var(--M);}
+.a-sub{display:none;padding:5rem 2rem;}
+.a-sub.active{display:block;}
+.founder-g{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start;}
+.f-port{width:100%;aspect-ratio:3/4;border-radius:20px;background:linear-gradient(145deg,var(--MX),var(--ML));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.f-av{width:130px;height:130px;border-radius:50%;background:var(--M);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:3.2rem;font-weight:900;color:var(--W);box-shadow:0 12px 36px rgba(194,24,91,0.4);}
+.f-badge{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);background:var(--M);color:var(--W);border-radius:30px;padding:0.45rem 1.1rem;font-size:0.75rem;font-weight:600;white-space:nowrap;box-shadow:0 6px 18px rgba(194,24,91,0.35);}
+.f-name{font-family:var(--fd);font-size:1.9rem;font-weight:700;margin-bottom:0.22rem;}
+.f-title{color:var(--M);font-size:0.88rem;font-weight:600;margin-bottom:1.4rem;}
+.f-bio{color:var(--GR);line-height:1.85;font-size:0.93rem;margin-bottom:1.3rem;}
+.f-quote{border-left:4px solid var(--M);padding:1rem 1.4rem;background:var(--MX);border-radius:0 12px 12px 0;margin-bottom:1.6rem;}
+.f-quote blockquote{font-family:var(--fd);font-size:1.05rem;font-style:italic;color:var(--MD);line-height:1.6;}
+.tags{display:flex;flex-wrap:wrap;gap:0.45rem;}
+.tag{padding:0.3rem 0.8rem;border-radius:20px;font-size:0.75rem;font-weight:500;background:var(--GLT);color:var(--D);border:1px solid rgba(0,0,0,0.07);}
+.tm{background:var(--MX);color:var(--MD);border-color:var(--ML);}
+.ts{background:var(--SX);color:var(--SD);border-color:var(--SL);}
+.tl{position:relative;max-width:820px;margin:0 auto;}
+.tl::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--M),var(--S));transform:translateX(-50%);}
+.tl-item{display:grid;grid-template-columns:1fr 60px 1fr;margin-bottom:2.2rem;align-items:start;}
+.tl-item:nth-child(odd) .tl-c{grid-column:1;text-align:right;padding-right:2.2rem;}
+.tl-item:nth-child(odd) .tl-empty{grid-column:3;}
+.tl-item:nth-child(even) .tl-c{grid-column:3;text-align:left;padding-left:2.2rem;}
+.tl-item:nth-child(even) .tl-empty{grid-column:1;}
+.tl-dot{grid-column:2;display:flex;align-items:center;justify-content:center;padding-top:0.2rem;}
+.tl-di{width:40px;height:40px;border-radius:50%;background:var(--W);border:3px solid var(--M);display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 0 6px rgba(194,24,91,0.1);position:relative;z-index:1;}
+.tl-di.sk{border-color:var(--S);box-shadow:0 0 0 6px rgba(2,136,209,0.1);}
+.tl-yr{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--M);margin-bottom:0.3rem;}
+.tl-yr.sk{color:var(--S);}
+.tl-c h3{font-size:0.97rem;font-weight:600;margin-bottom:0.35rem;}
+.tl-c p{font-size:0.83rem;color:var(--GR);line-height:1.6;}
+.mvv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.mvv{border-radius:16px;padding:1.85rem;border:1px solid rgba(0,0,0,0.06);background:var(--W);position:relative;overflow:hidden;}
+.mvv::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.mvv.mm::before{background:var(--M);}
+.mvv.ms::before{background:var(--S);}
+.mvv.mv::before{background:linear-gradient(to right,var(--M),var(--S));}
+.mvv-ico{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.45rem;margin-bottom:1.1rem;}
+.mi-m{background:var(--MX);}
+.mi-s{background:var(--SX);}
+.mi-v{background:var(--PL);}
+.mvv h3{font-size:1rem;font-weight:700;margin-bottom:0.7rem;font-family:var(--fd);}
+.mvv p{font-size:0.85rem;color:var(--GR);line-height:1.75;}
+.val-list{list-style:none;margin-top:0.7rem;display:flex;flex-direction:column;gap:0.45rem;}
+.val-list li{font-size:0.83rem;color:var(--D);display:flex;align-items:center;gap:0.55rem;}
+.val-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--M),var(--S));flex-shrink:0;}
+.gov-g{display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:start;}
+.patron-c{background:linear-gradient(135deg,var(--MD),var(--M));border-radius:16px;padding:1.85rem;color:var(--W);text-align:center;margin-bottom:1.3rem;}
+.pat-av{width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,0.2);margin:0 auto 0.9rem;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.7rem;font-weight:700;border:2px solid rgba(255,255,255,0.3);}
+.patron-c h4{font-family:var(--fd);font-size:1.05rem;margin-bottom:0.22rem;}
+.patron-c span{font-size:0.75rem;opacity:0.8;}
+.perm-badge{display:inline-block;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);border-radius:20px;padding:0.28rem 0.8rem;font-size:0.7rem;margin-top:0.65rem;letter-spacing:0.06em;}
+.brd-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.brd-s{background:var(--GLT);border-radius:12px;padding:1rem;text-align:center;}
+.brd-s strong{display:block;font-family:var(--fd);font-size:1.7rem;color:var(--M);}
+.brd-s span{font-size:0.75rem;color:var(--GR);}
+.sub-bds{display:flex;flex-direction:column;gap:0.9rem;}
+.sbd{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:var(--W);transition:all 0.25s;}
+.sbd:hover{border-color:var(--ML);background:var(--MX);transform:translateX(4px);}
+.sbd-ico{width:42px;height:42px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.15rem;}
+.si-h{background:var(--MX);}
+.si-e{background:var(--SX);}
+.si-hu{background:var(--OL);}
+.si-i{background:var(--PL);}
+.si-en{background:var(--GL);}
+.sbd-info{flex:1;}
+.sbd-info strong{display:block;font-size:0.9rem;font-weight:600;margin-bottom:0.12rem;}
+.sbd-info span{font-size:0.78rem;color:var(--GR);}
+.sbd-cnt{font-size:0.75rem;font-weight:700;color:var(--M);background:var(--MX);padding:0.22rem 0.6rem;border-radius:20px;flex-shrink:0;}
+.team-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(188px,1fr));gap:1.4rem;}
+.tm-c{background:var(--W);border-radius:16px;border:1px solid rgba(0,0,0,0.06);overflow:hidden;text-align:center;transition:all 0.3s;}
+.tm-c:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(0,0,0,0.09);}
+.tm-img{height:124px;display:flex;align-items:center;justify-content:center;}
+.tm-av{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.7rem;font-weight:700;color:var(--W);}
+.av-m{background:linear-gradient(135deg,var(--MD),var(--M));}
+.av-s{background:linear-gradient(135deg,var(--SD),var(--S));}
+.av-g{background:linear-gradient(135deg,#2E7D32,var(--G));}
+.av-p{background:linear-gradient(135deg,#6A1B9A,var(--P));}
+.av-o{background:linear-gradient(135deg,#E65100,var(--O));}
+.bg-m{background:var(--MX);}
+.bg-s{background:var(--SX);}
+.bg-g{background:var(--GL);}
+.bg-p{background:var(--PL);}
+.bg-o{background:var(--OL);}
+.tm-b{padding:1rem;}
+.tm-b h4{font-size:0.9rem;font-weight:600;margin-bottom:0.18rem;}
+.tm-role{font-size:0.76rem;color:var(--M);font-weight:500;margin-bottom:0.35rem;}
+.tm-tag{display:inline-block;font-size:0.68rem;padding:0.18rem 0.55rem;border-radius:12px;background:var(--GLT);color:var(--GR);}
+
+/* ══ OUR WORK ══ */
+.pil-nav{background:var(--W);border-bottom:1px solid rgba(0,0,0,0.08);position:sticky;top:68px;z-index:900;display:flex;justify-content:center;overflow-x:auto;}
+.pn-btn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:0.9rem 1.3rem;font-size:0.8rem;font-weight:500;color:var(--GR);border-bottom:3px solid transparent;transition:all 0.2s;white-space:nowrap;min-width:100px;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:var(--fb);}
+.pn-btn .pi{font-size:1.25rem;}
+.pn-h.active,.pn-h:hover{color:var(--M);border-bottom-color:var(--M);}
+.pn-e.active,.pn-e:hover{color:var(--S);border-bottom-color:var(--S);}
+.pn-hu.active,.pn-hu:hover{color:var(--O);border-bottom-color:var(--O);}
+.pn-i.active,.pn-i:hover{color:var(--P);border-bottom-color:var(--P);}
+.pn-en.active,.pn-en:hover{color:var(--G);border-bottom-color:var(--G);}
+.pd{display:none;padding:5rem 2rem;}
+.pd.active{display:block;}
+.pd-g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center;margin-bottom:4rem;}
+.pib{border-radius:24px;aspect-ratio:1;max-width:360px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;position:relative;overflow:hidden;}
+.pib::before{content:'';position:absolute;top:-30px;left:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.1);}
+.pib span{position:relative;z-index:1;font-size:5rem;}
+.pib-lbl{font-size:0.9rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.85);position:relative;z-index:1;}
+.pib-m{background:linear-gradient(145deg,var(--MD),var(--M));}
+.pib-s{background:linear-gradient(145deg,var(--SD),var(--S));}
+.pib-o{background:linear-gradient(145deg,#E65100,var(--O));}
+.pib-p{background:linear-gradient(145deg,#4A148C,var(--P));}
+.pib-g{background:linear-gradient(145deg,#1B5E20,var(--G));}
+.pd-intro p{font-size:0.97rem;color:var(--GR);line-height:1.85;margin-bottom:0.9rem;}
+.sdg-wrap{display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.1rem;}
+.sdg{padding:0.28rem 0.8rem;border-radius:20px;font-size:0.72rem;font-weight:600;border:1px solid;display:inline-block;}
+.imp-row{border-radius:16px;padding:1.85rem 2.2rem;display:flex;flex-wrap:wrap;margin-bottom:3rem;}
+.imp-s{flex:1;min-width:130px;text-align:center;padding:0.9rem 1.2rem;border-right:1px solid rgba(255,255,255,0.22);}
+.imp-s:last-child{border-right:none;}
+.imp-s strong{display:block;font-family:var(--fd);font-size:2rem;font-weight:900;color:var(--W);}
+.imp-s span{font-size:0.74rem;color:rgba(255,255,255,0.72);text-transform:uppercase;letter-spacing:0.07em;}
+.ir-m{background:linear-gradient(135deg,var(--MD),var(--M));}
+.ir-s{background:linear-gradient(135deg,var(--SD),var(--S));}
+.ir-o{background:linear-gradient(135deg,#E65100,var(--O));}
+.ir-p{background:linear-gradient(135deg,#4A148C,var(--P));}
+.ir-g{background:linear-gradient(135deg,#1B5E20,var(--G));}
+.foc-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-bottom:3rem;}
+.foc-c{border-radius:14px;padding:1.4rem;border:1px solid rgba(0,0,0,0.07);background:var(--W);transition:all 0.28s;}
+.foc-c:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(0,0,0,0.09);}
+.foc-c .fi{font-size:1.75rem;margin-bottom:0.75rem;display:block;}
+.foc-c h4{font-size:0.92rem;font-weight:600;margin-bottom:0.35rem;}
+.foc-c p{font-size:0.8rem;color:var(--GR);line-height:1.6;}
+.pl{display:flex;flex-direction:column;gap:0.9rem;margin-bottom:3rem;}
+.pl-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.3rem 1.4rem;border-radius:14px;border:1px solid rgba(0,0,0,0.07);background:var(--W);}
+.pl-num{width:38px;height:38px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.88rem;color:var(--W);}
+.pn-m{background:var(--M);}
+.pn-s{background:var(--S);}
+.pn-o{background:var(--O);}
+.pn-p{background:var(--P);}
+.pn-g{background:var(--G);}
+.pl-text{flex:1;}
+.pl-text strong{display:block;font-size:0.93rem;font-weight:600;margin-bottom:0.28rem;}
+.pl-text p{font-size:0.82rem;color:var(--GR);line-height:1.6;}
+.ps-st{font-size:0.68rem;font-weight:700;padding:0.2rem 0.65rem;border-radius:12px;text-transform:uppercase;letter-spacing:0.06em;flex-shrink:0;align-self:flex-start;margin-top:2px;}
+.ps-a{background:#E8F5E9;color:#2E7D32;}
+.ps-p{background:#E3F2FD;color:var(--SD);}
+.ps-f{background:var(--MX);color:var(--MD);}
+.pil-q{border-radius:18px;padding:2.5rem;margin-bottom:3rem;display:flex;gap:2rem;align-items:flex-start;}
+.pq-ico{font-size:3.2rem;line-height:1;flex-shrink:0;}
+.pil-q blockquote{font-family:var(--fd);font-size:1.2rem;font-style:italic;line-height:1.6;margin-bottom:0.7rem;}
+.pil-q cite{font-size:0.82rem;font-style:normal;font-weight:500;opacity:0.72;}
+.pq-m{background:var(--MX);border-left:5px solid var(--M);}
+.pq-s{background:var(--SX);border-left:5px solid var(--S);}
+.pq-o{background:var(--OL);border-left:5px solid var(--O);}
+.pq-p{background:var(--PL);border-left:5px solid var(--P);}
+.pq-g{background:var(--GL);border-left:5px solid var(--G);}
+.pcs-strip{border-radius:18px;padding:2.2rem 2.6rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.pcs-m{background:linear-gradient(135deg,var(--MD),var(--M));color:var(--W);}
+.pcs-s{background:linear-gradient(135deg,var(--SD),var(--S));color:var(--W);}
+.pcs-o{background:linear-gradient(135deg,#E65100,var(--O));color:var(--W);}
+.pcs-p{background:linear-gradient(135deg,#4A148C,var(--P));color:var(--W);}
+.pcs-g{background:linear-gradient(135deg,#1B5E20,var(--G));color:var(--W);}
+.pcs-txt h3{font-family:var(--fd);font-size:1.25rem;font-weight:700;margin-bottom:0.35rem;}
+.pcs-txt p{font-size:0.85rem;opacity:0.82;}
+.btn-wt{background:var(--W);border-radius:50px;padding:0.7rem 1.6rem;font-weight:600;font-size:0.85rem;border:none;cursor:pointer;font-family:var(--fb);transition:all 0.22s;flex-shrink:0;}
+.btn-wt:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.bwt-m{color:var(--M);}
+.bwt-s{color:var(--SD);}
+.bwt-o{color:var(--O);}
+.bwt-p{color:var(--P);}
+.bwt-g{color:var(--G);}
+
+/* ══ PROJECTS ══ */
+.fil-bar{background:var(--W);border-bottom:1px solid rgba(0,0,0,0.08);position:sticky;top:68px;z-index:900;padding:0.8rem 2rem;display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;justify-content:center;}
+.fl{font-size:0.75rem;font-weight:600;color:var(--GR);text-transform:uppercase;letter-spacing:0.08em;margin-right:0.4rem;}
+.fb2{padding:0.38rem 0.95rem;border-radius:20px;font-size:0.78rem;font-weight:500;border:1.5px solid rgba(0,0,0,0.1);background:var(--W);cursor:pointer;transition:all 0.2s;color:var(--GR);font-family:var(--fb);}
+.fb2:hover{border-color:var(--M);color:var(--M);}
+.fb2.fa{background:var(--M);color:var(--W);border-color:var(--M);}
+.flag-g{display:grid;grid-template-columns:1fr 1fr;gap:1.85rem;margin-bottom:5rem;}
+.flag-c{border-radius:20px;overflow:hidden;border:1px solid rgba(0,0,0,0.07);transition:all 0.35s;position:relative;}
+.flag-c:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,0.12);}
+.fc-top{height:194px;display:flex;align-items:flex-end;padding:1.4rem;position:relative;overflow:hidden;}
+.fc-top::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.18);}
+.fc-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;}
+.fc-bg-m{background:linear-gradient(145deg,var(--MD),var(--M));}
+.fc-bg-s{background:linear-gradient(145deg,var(--SD),var(--S));}
+.fc-meta{position:relative;z-index:1;}
+.fc-pill{display:block;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.32);color:var(--W);padding:0.28rem 0.8rem;border-radius:20px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.45rem;width:fit-content;}
+.fc-top h3{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--W);line-height:1.25;position:relative;z-index:1;}
+.fc-body{padding:1.65rem;}
+.fc-body p{font-size:0.86rem;color:var(--GR);line-height:1.75;margin-bottom:1.2rem;}
+.fc-metas{display:flex;gap:1.3rem;flex-wrap:wrap;margin-bottom:1.2rem;}
+.fc-mi{display:flex;flex-direction:column;}
+.fc-mi .fml{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--GR);margin-bottom:0.18rem;}
+.fc-mi .fmv{font-size:0.88rem;font-weight:600;color:var(--D);}
+.pb-w{margin-bottom:1.2rem;}
+.pb-lbs{display:flex;justify-content:space-between;font-size:0.75rem;color:var(--GR);margin-bottom:0.38rem;}
+.pb-tr{height:6px;background:var(--GLT);border-radius:99px;overflow:hidden;}
+.pb-fi{height:100%;border-radius:99px;}
+.pbf-m{background:linear-gradient(to right,var(--MD),var(--M));}
+.pbf-s{background:linear-gradient(to right,var(--SD),var(--S));}
+.fc-tags{display:flex;flex-wrap:wrap;gap:0.38rem;margin-bottom:1.3rem;}
+.fc-tag{padding:0.2rem 0.65rem;border-radius:12px;font-size:0.7rem;font-weight:500;background:var(--GLT);color:var(--GR);}
+.fl-star{position:absolute;top:0.9rem;right:0.9rem;z-index:2;background:#FFD700;color:#5D4037;padding:0.28rem 0.7rem;border-radius:20px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;}
+.apg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem;}
+.proj-c{background:var(--W);border-radius:16px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;}
+.proj-c:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(0,0,0,0.1);}
+.proj-c[data-p]:not(.pv){display:none!important;}
+.proj-c.pv{display:flex!important;}
+.pc-stripe{height:10px;}
+.stripe-m{background:var(--M);}
+.stripe-s{background:var(--S);}
+.stripe-o{background:var(--O);}
+.stripe-p{background:var(--P);}
+.stripe-g{background:var(--G);}
+.pc-bd{padding:1.35rem;flex:1;display:flex;flex-direction:column;}
+.pc-hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:0.7rem;margin-bottom:0.8rem;}
+.pc-ico{font-size:1.55rem;flex-shrink:0;}
+.pc-st{font-size:0.67rem;font-weight:700;padding:0.2rem 0.62rem;border-radius:12px;text-transform:uppercase;letter-spacing:0.06em;flex-shrink:0;}
+.pc-bd h3{font-size:0.94rem;font-weight:600;margin-bottom:0.45rem;line-height:1.4;}
+.pc-bd p{font-size:0.82rem;color:var(--GR);line-height:1.65;flex:1;margin-bottom:0.9rem;}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.pc-pt{font-size:0.7rem;font-weight:600;padding:0.2rem 0.62rem;border-radius:12px;display:flex;align-items:center;gap:3px;}
+.ppt-h{background:var(--MX);color:var(--MD);}
+.ppt-e{background:var(--SX);color:var(--SD);}
+.ppt-hu{background:var(--OL);color:#E65100;}
+.ppt-i{background:var(--PL);color:#6A1B9A;}
+.ppt-en{background:var(--GL);color:#2E7D32;}
+.pc-lk{font-size:0.77rem;font-weight:600;color:var(--M);cursor:pointer;}
+.bud-cs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem;margin-bottom:2.5rem;}
+.bud-c{border-radius:16px;padding:1.65rem;text-align:center;border:1px solid rgba(0,0,0,0.07);background:var(--W);transition:all 0.28s;}
+.bud-c:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,0.09);}
+.bud-c .bc-i{font-size:1.9rem;margin-bottom:0.7rem;display:block;}
+.bud-c .bc-p{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.38rem;}
+.bud-c .bc-a{font-family:var(--fd);font-size:1.55rem;font-weight:700;margin-bottom:0.22rem;}
+.bud-c .bc-s{font-size:0.76rem;color:var(--GR);}
+.bud-tot{border-radius:20px;padding:2.2rem;background:linear-gradient(135deg,var(--MD),var(--M) 50%,#1565C0);color:var(--W);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.bt-main strong{display:block;font-family:var(--fd);font-size:2.2rem;font-weight:900;}
+.bt-main span{font-size:0.85rem;opacity:0.8;}
+.bt-bd{display:flex;gap:1.8rem;flex-wrap:wrap;}
+.bt-it{text-align:center;}
+.bt-it strong{display:block;font-size:1.05rem;font-weight:700;}
+.bt-it span{font-size:0.72rem;opacity:0.72;}
+.phase-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;}
+.phase-c{border-radius:16px;padding:1.65rem;background:var(--W);border:1px solid rgba(0,0,0,0.07);position:relative;transition:all 0.28s;}
+.phase-c:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,0.09);}
+.phase-n{position:absolute;top:-13px;left:1.4rem;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:var(--W);}
+.phase-c h4{font-size:0.92rem;font-weight:600;margin-bottom:0.28rem;margin-top:0.7rem;}
+.phase-dur{font-size:0.73rem;color:var(--M);font-weight:600;margin-bottom:0.55rem;}
+.phase-c p{font-size:0.8rem;color:var(--GR);line-height:1.65;}
+
+/* ══ DONATE ══ */
+.don-g{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3.5rem;align-items:start;}
+.don-card{background:var(--W);border-radius:20px;padding:2.4rem;box-shadow:0 8px 32px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.06);}
+.don-card h2{font-family:var(--fd);font-size:1.55rem;font-weight:700;margin-bottom:0.45rem;}
+.don-card>p{font-size:0.86rem;color:var(--GR);margin-bottom:1.85rem;line-height:1.7;}
+.amt-g{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem;margin-bottom:1.4rem;}
+.amt-btn{padding:0.8rem;border:2px solid rgba(0,0,0,0.09);border-radius:12px;background:var(--W);cursor:pointer;font-family:var(--fb);font-size:0.92rem;font-weight:600;color:var(--D);transition:all 0.2s;text-align:center;}
+.amt-btn:hover{border-color:var(--M);color:var(--M);}
+.amt-btn.ac{background:var(--M);color:var(--W);border-color:var(--M);}
+.amt-sub{display:block;font-size:0.67rem;font-weight:400;opacity:0.75;margin-top:2px;}
+.cust-inp{width:100%;padding:0.8rem 1rem;border:2px solid rgba(0,0,0,0.09);border-radius:12px;font-family:var(--fb);font-size:0.92rem;margin-bottom:1.4rem;outline:none;transition:border-color 0.2s;display:none;}
+.cust-inp:focus{border-color:var(--M);}
+.f-lbl{font-size:0.8rem;font-weight:600;color:var(--D);margin-bottom:0.38rem;display:block;}
+.pil-s{display:grid;grid-template-columns:repeat(3,1fr);gap:0.45rem;margin-bottom:1.4rem;}
+.pb3{padding:0.55rem 0.45rem;border:1.5px solid rgba(0,0,0,0.09);border-radius:10px;background:var(--W);cursor:pointer;font-size:0.73rem;font-weight:500;color:var(--GR);transition:all 0.2s;text-align:center;font-family:var(--fb);}
+.pb3:hover,.pb3.ac{background:var(--MX);color:var(--MD);border-color:var(--M);}
+.frq-tog{display:flex;border:1.5px solid rgba(0,0,0,0.09);border-radius:10px;overflow:hidden;margin-bottom:1.4rem;}
+.frq-btn{flex:1;padding:0.65rem;border:none;background:var(--W);cursor:pointer;font-family:var(--fb);font-size:0.82rem;font-weight:500;color:var(--GR);transition:all 0.2s;}
+.frq-btn.ac{background:var(--M);color:var(--W);}
+.don-sub{width:100%;padding:1rem;background:var(--M);color:var(--W);border:none;border-radius:12px;font-family:var(--fb);font-size:0.97rem;font-weight:700;cursor:pointer;transition:all 0.25s;}
+.don-sub:hover{background:var(--MD);transform:translateY(-2px);box-shadow:0 8px 20px rgba(194,24,91,0.35);}
+.pay-ics{display:flex;align-items:center;justify-content:center;gap:0.9rem;margin-top:0.9rem;}
+.pay-ic{padding:0.32rem 0.8rem;background:var(--GLT);border-radius:6px;font-size:0.72rem;font-weight:700;color:var(--D);}
+.pay-ic.mp{background:#00A651;color:var(--W);}
+.imp-box{background:var(--W);border-radius:20px;padding:1.85rem;border:1px solid rgba(0,0,0,0.07);margin-bottom:1.4rem;}
+.imp-box h3{font-family:var(--fd);font-size:1.1rem;font-weight:700;margin-bottom:0.9rem;}
+.imp-res{border-radius:12px;padding:1.2rem;background:var(--MX);border-left:4px solid var(--M);margin-bottom:0.9rem;}
+.ir-a{font-family:var(--fd);font-size:1.45rem;font-weight:700;color:var(--M);margin-bottom:0.22rem;}
+.ir-d{font-size:0.83rem;color:var(--MD);line-height:1.6;}
+.tier-cs{display:flex;flex-direction:column;gap:0.7rem;}
+.tier-c{border-radius:12px;padding:1rem;border:1px solid rgba(0,0,0,0.07);display:flex;align-items:center;gap:0.9rem;transition:all 0.25s;}
+.tier-c:hover{transform:translateX(3px);}
+.tier-ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.ti-d{background:linear-gradient(135deg,#B2EBF2,#26C6DA);}
+.ti-g{background:linear-gradient(135deg,#FFF9C4,#FFD600);}
+.ti-s{background:linear-gradient(135deg,#F5F5F5,#BDBDBD);}
+.ti-b{background:linear-gradient(135deg,#FFCCBC,#FF8A65);}
+.tier-i strong{display:block;font-size:0.86rem;font-weight:600;margin-bottom:0.12rem;}
+.tier-i span{font-size:0.76rem;color:var(--GR);}
+.tier-a{font-weight:700;font-size:0.86rem;color:var(--M);margin-left:auto;flex-shrink:0;}
+.ways-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;}
+.way-c{border-radius:16px;padding:1.65rem;border:1px solid rgba(0,0,0,0.07);background:var(--W);transition:all 0.3s;text-align:center;}
+.way-c:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(0,0,0,0.09);}
+.way-ico{width:54px;height:54px;border-radius:50%;margin:0 auto 0.9rem;display:flex;align-items:center;justify-content:center;font-size:1.45rem;}
+.wi-m{background:var(--MX);}
+.wi-s{background:var(--SX);}
+.wi-g{background:var(--GL);}
+.wi-gold{background:#FFF8E1;}
+.way-c h3{font-size:0.95rem;font-weight:600;margin-bottom:0.42rem;}
+.way-c p{font-size:0.82rem;color:var(--GR);line-height:1.65;margin-bottom:0.9rem;}
+.way-lk{font-size:0.8rem;font-weight:600;color:var(--M);cursor:pointer;}
+.vol-g{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
+.role-cs{display:flex;flex-direction:column;gap:0.9rem;}
+.role-c{background:var(--W);border-radius:14px;padding:1.1rem 1.4rem;border:1px solid rgba(0,0,0,0.07);display:flex;align-items:flex-start;gap:0.9rem;transition:all 0.25s;}
+.role-c:hover{border-color:var(--ML);background:var(--MX);transform:translateX(4px);}
+.role-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;background:var(--MX);}
+.role-c strong{display:block;font-size:0.9rem;font-weight:600;margin-bottom:0.18rem;}
+.role-c p{font-size:0.8rem;color:var(--GR);line-height:1.6;}
+.vol-form{background:var(--W);border-radius:20px;padding:2.4rem;box-shadow:0 8px 32px rgba(0,0,0,0.08);}
+.vol-form h3{font-family:var(--fd);font-size:1.3rem;font-weight:700;margin-bottom:0.42rem;}
+.vol-form>p{font-size:0.83rem;color:var(--GR);margin-bottom:1.65rem;line-height:1.7;}
+.f-grp{margin-bottom:1rem;}
+.f-inp,.f-sel,.f-ta{width:100%;padding:0.75rem 0.95rem;border:1.5px solid rgba(0,0,0,0.09);border-radius:10px;font-family:var(--fb);font-size:0.86rem;outline:none;transition:border-color 0.2s;background:var(--W);color:var(--D);}
+.f-inp:focus,.f-sel:focus,.f-ta:focus{border-color:var(--M);}
+.f-ta{resize:vertical;min-height:85px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+.f-sub{width:100%;padding:0.85rem;background:var(--M);color:var(--W);border:none;border-radius:10px;font-family:var(--fb);font-size:0.92rem;font-weight:600;cursor:pointer;transition:all 0.25s;margin-top:0.4rem;}
+.f-sub:hover{background:var(--MD);transform:translateY(-1px);box-shadow:0 6px 16px rgba(194,24,91,0.3);}
+.part-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.part-c{border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,0.07);transition:all 0.3s;}
+.part-c:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(0,0,0,0.1);}
+.part-h{padding:1.65rem;text-align:center;}
+.ph-m{background:linear-gradient(135deg,var(--MD),var(--M));}
+.ph-s{background:linear-gradient(135deg,var(--SD),var(--S));}
+.ph-g{background:linear-gradient(135deg,#1B5E20,var(--G));}
+.part-h h3{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--W);margin-top:0.65rem;}
+.part-h .ph-ico{font-size:2rem;}
+.part-b{padding:1.4rem;background:var(--W);}
+.perks{list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.1rem;}
+.perks li{font-size:0.81rem;color:var(--D);display:flex;align-items:flex-start;gap:0.45rem;line-height:1.55;}
+.perks li::before{content:'✓';font-weight:700;flex-shrink:0;}
+.ck-m::before{color:var(--M);}
+.ck-s::before{color:var(--S);}
+.ck-g::before{color:var(--G);}
+.part-price{font-family:var(--fd);font-size:1.25rem;font-weight:700;margin-bottom:0.9rem;}
+.pp-m{color:var(--M);}
+.pp-s{color:var(--S);}
+.pp-g{color:var(--G);}
+.btn-blk{display:block;width:100%;padding:0.72rem;border-radius:10px;text-align:center;font-weight:600;font-size:0.83rem;border:none;cursor:pointer;transition:all 0.22s;font-family:var(--fb);}
+.bb-m{background:var(--M);color:var(--W);}
+.bb-m:hover{background:var(--MD);}
+.bb-s{background:var(--S);color:var(--W);}
+.bb-s:hover{background:var(--SD);}
+.bb-g{background:var(--G);color:var(--W);}
+.bb-g:hover{background:#2E7D32;}
+.clubs-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(188px,1fr));gap:1.2rem;}
+.club-c{background:var(--W);border-radius:16px;padding:1.4rem;border:1px solid rgba(0,0,0,0.07);text-align:center;transition:all 0.3s;}
+.club-c:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,0.09);}
+.club-c .ci{font-size:1.9rem;margin-bottom:0.7rem;display:block;}
+.club-c h4{font-size:0.9rem;font-weight:600;margin-bottom:0.28rem;}
+.club-c p{font-size:0.78rem;color:var(--GR);line-height:1.6;margin-bottom:0.8rem;}
+.club-tag{display:inline-block;padding:0.2rem 0.62rem;border-radius:12px;font-size:0.68rem;font-weight:600;background:var(--MX);color:var(--MD);}
+
+/* ══ NEWS ══ */
+.nws-filt{background:var(--W);border-bottom:1px solid rgba(0,0,0,0.08);position:sticky;top:68px;z-index:900;padding:0.8rem 2rem;display:flex;align-items:center;gap:0.55rem;flex-wrap:wrap;justify-content:center;}
+.nf-b{padding:0.38rem 0.95rem;border-radius:20px;font-size:0.78rem;font-weight:500;border:1.5px solid rgba(0,0,0,0.09);background:var(--W);cursor:pointer;transition:all 0.2s;color:var(--GR);font-family:var(--fb);}
+.nf-b:hover{border-color:var(--M);color:var(--M);}
+.nf-b.na{background:var(--M);color:var(--W);border-color:var(--M);}
+.feat-c{border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(0,0,0,0.07);}
+.feat-vis{background:linear-gradient(145deg,var(--MD),var(--M));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;padding:3rem;position:relative;overflow:hidden;min-height:300px;}
+.feat-vis::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.07);}
+.fv-em{position:relative;z-index:1;font-size:4.5rem;}
+.fv-bd{position:relative;z-index:1;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.28);color:var(--W);padding:0.28rem 0.85rem;border-radius:20px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;}
+.feat-info{padding:2.8rem;background:var(--W);}
+.fi-cat{font-size:0.73rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--M);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.38rem;}
+.fi-cat::before{content:'';width:18px;height:2px;background:var(--M);display:block;}
+.feat-info h2{font-family:var(--fd);font-size:1.7rem;font-weight:700;line-height:1.25;margin-bottom:0.9rem;}
+.feat-info p{font-size:0.9rem;color:var(--GR);line-height:1.8;margin-bottom:1.3rem;}
+.feat-meta{display:flex;align-items:center;gap:1.3rem;margin-bottom:1.6rem;flex-wrap:wrap;}
+.feat-meta span{font-size:0.76rem;color:var(--GR);}
+.btn-read{display:inline-flex;align-items:center;gap:0.45rem;background:var(--M);color:var(--W);padding:0.7rem 1.5rem;border-radius:50px;font-size:0.83rem;font-weight:600;border:none;cursor:pointer;transition:all 0.25s;font-family:var(--fb);}
+.btn-read:hover{background:var(--MD);transform:translateY(-2px);}
+.ang{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem;}
+.n-c{background:var(--W);border-radius:16px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;transition:all 0.3s;display:flex;flex-direction:column;}
+.n-c:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(0,0,0,0.1);}
+.n-c[data-c]:not(.nv){display:none!important;}
+.n-c.nv{display:flex!important;}
+.n-img{height:170px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;}
+.ni-m{background:linear-gradient(145deg,var(--MX),var(--ML));}
+.ni-s{background:linear-gradient(145deg,var(--SX),var(--SL));}
+.ni-o{background:linear-gradient(145deg,var(--OL),#FFCC80);}
+.ni-p{background:linear-gradient(145deg,var(--PL),#CE93D8);}
+.ni-g{background:linear-gradient(145deg,var(--GL),#A5D6A7);}
+.ni-d{background:linear-gradient(145deg,#E8EAF6,#C5CAE9);}
+.n-b{padding:1.3rem;flex:1;display:flex;flex-direction:column;}
+.n-cat{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.42rem;}
+.nc-m{color:var(--M);}
+.nc-s{color:var(--S);}
+.nc-o{color:var(--O);}
+.nc-p{color:var(--P);}
+.nc-g{color:var(--G);}
+.nc-d{color:var(--D);}
+.n-b h3{font-family:var(--fd);font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:0.55rem;}
+.n-b p{font-size:0.81rem;color:var(--GR);line-height:1.65;flex:1;margin-bottom:0.9rem;}
+.n-ft{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.n-dt{font-size:0.72rem;color:var(--GR);}
+.n-lk{font-size:0.76rem;font-weight:600;color:var(--M);cursor:pointer;}
+.gal-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:0.95rem;}
+.gal-i{border-radius:14px;overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:3.2rem;cursor:pointer;transition:all 0.3s;position:relative;}
+.gal-i::after{content:'🔍';position:absolute;inset:0;background:rgba(194,24,91,0.72);display:grid;place-items:center;font-size:1.4rem;opacity:0;transition:opacity 0.3s;}
+.gal-i:hover{transform:scale(1.04);}
+.gal-i:hover::after{opacity:1;}
+.gi1{background:linear-gradient(145deg,var(--MX),var(--ML));}
+.gi2{background:linear-gradient(145deg,var(--SX),var(--SL));}
+.gi3{background:linear-gradient(145deg,var(--GL),#A5D6A7);}
+.gi4{background:linear-gradient(145deg,var(--OL),#FFCC80);}
+.gi5{background:linear-gradient(145deg,var(--PL),#CE93D8);}
+.gi6{background:linear-gradient(145deg,#FCE4EC,#F8BBD9);}
+.gi7{background:linear-gradient(145deg,#E1F5FE,#B3E5FC);}
+.gi8{background:linear-gradient(145deg,var(--GL),#A5D6A7);}
+.gi9{background:linear-gradient(145deg,var(--OL),#FFCC80);}
+.rep-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;}
+.rep-c{border-radius:14px;padding:1.5rem;border:1px solid rgba(0,0,0,0.07);background:var(--W);display:flex;gap:0.9rem;align-items:flex-start;transition:all 0.25s;}
+.rep-c:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.08);}
+.rep-ico{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;}
+.ri-m{background:var(--MX);}
+.ri-s{background:var(--SX);}
+.ri-g{background:var(--GL);}
+.rep-c h4{font-size:0.9rem;font-weight:600;margin-bottom:0.22rem;}
+.rep-c p{font-size:0.78rem;color:var(--GR);line-height:1.55;margin-bottom:0.6rem;}
+.rep-meta{display:flex;align-items:center;gap:0.7rem;}
+.r-sz{font-size:0.7rem;color:var(--GR);background:var(--GLT);padding:0.16rem 0.52rem;border-radius:6px;}
+.r-dl{font-size:0.76rem;font-weight:600;color:var(--M);cursor:pointer;}
+.nl-sec{background:linear-gradient(135deg,var(--MD),var(--M) 52%,#1565C0);}
+.nl-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:5rem 2rem;max-width:1160px;margin:0 auto;}
+.nl-text h2{font-family:var(--fd);font-size:1.9rem;font-weight:700;color:var(--W);margin-bottom:0.9rem;}
+.nl-text p{font-size:0.92rem;color:rgba(255,255,255,0.8);line-height:1.75;}
+.nl-perks{margin-top:1.8rem;display:flex;flex-direction:column;gap:0.65rem;}
+.nl-perk{color:rgba(255,255,255,0.8);font-size:0.86rem;}
+.nl-fw{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:2.4rem;}
+.nl-fw h3{font-family:var(--fd);font-size:1.2rem;color:var(--W);margin-bottom:1.4rem;}
+.nl-inp{width:100%;padding:0.8rem 0.95rem;border-radius:10px;border:1.5px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.1);color:var(--W);font-family:var(--fb);font-size:0.86rem;outline:none;transition:border-color 0.2s;margin-bottom:0.9rem;}
+.nl-inp::placeholder{color:rgba(255,255,255,0.52);}
+.nl-inp:focus{border-color:rgba(255,255,255,0.58);}
+.nl-ints{display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:1.1rem;}
+.nl-int{padding:0.28rem 0.75rem;border-radius:20px;font-size:0.73rem;font-weight:500;border:1.5px solid rgba(255,255,255,0.22);background:transparent;color:rgba(255,255,255,0.72);cursor:pointer;font-family:var(--fb);transition:all 0.2s;}
+.nl-int:hover,.nl-int.ac{background:var(--W);color:var(--M);border-color:var(--W);}
+.nl-sub{width:100%;padding:0.85rem;background:var(--W);color:var(--M);border:none;border-radius:10px;font-family:var(--fb);font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.25s;}
+.nl-sub:hover{background:var(--MX);transform:translateY(-1px);}
+.press-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;}
+.press-c{background:var(--W);border-radius:14px;padding:1.4rem;border:1px solid rgba(0,0,0,0.07);transition:all 0.25s;}
+.press-c:hover{box-shadow:0 10px 24px rgba(0,0,0,0.08);transform:translateY(-3px);}
+.press-c .plogo{font-size:1.45rem;margin-bottom:0.7rem;}
+.press-c h4{font-size:0.86rem;font-weight:600;margin-bottom:0.38rem;line-height:1.4;}
+.press-c p{font-size:0.78rem;color:var(--GR);line-height:1.6;margin-bottom:0.65rem;}
+.press-c .pdate{font-size:0.7rem;color:var(--GR);}
+.press-contact{border-radius:16px;padding:1.85rem;background:var(--MX);border:1px solid var(--ML);margin-top:1.85rem;}
+.press-contact h3{font-size:0.97rem;font-weight:600;margin-bottom:0.45rem;}
+.press-contact p{font-size:0.83rem;color:var(--GR);line-height:1.7;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .mission-g,.founder-g,.gov-g,.don-g,.vol-g{grid-template-columns:1fr!important;}
+  .prog-g,.flag-g{grid-template-columns:1fr!important;}
+  .mvv-g,.part-g,.inv-g,.ng,.tg{grid-template-columns:1fr!important;}
+  .feat-c,.nl-inner{grid-template-columns:1fr!important;}
+  .feat-vis{min-height:200px!important;}
+  .tl::before{left:28px!important;}
+  .tl-item{grid-template-columns:60px 1fr!important;}
+  .tl-item:nth-child(odd) .tl-c,.tl-item:nth-child(even) .tl-c{grid-column:2!important;text-align:left!important;padding-left:1.4rem!important;padding-right:0!important;}
+  .tl-dot{grid-column:1!important;}
+  .tl-empty{display:none!important;}
+  .pd-g{grid-template-columns:1fr!important;}
+  .pib{aspect-ratio:2/1!important;}
+  .pcs-strip{flex-direction:column!important;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .fg{grid-template-columns:1fr 1fr!important;}
+  .fb{grid-column:1/-1!important;}
+  .stat-bar{flex-direction:column!important;gap:0!important;}
+  .si{border-right:none!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;}
+  .f-row{grid-template-columns:1fr!important;}
+  .amt-g{grid-template-columns:repeat(2,1fr)!important;}
+  .pil-s{grid-template-columns:repeat(2,1fr)!important;}
+  .part-g{grid-template-columns:1fr!important;}
+  .phase-g{grid-template-columns:1fr!important;}
+  .clubs-g{grid-template-columns:repeat(2,1fr)!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo" onclick="go('home')">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 26 26" fill="none">
+        <path d="M13 3C13 3 5 8 5 14c0 4.4 3.6 8 8 8s8-3.6 8-8c0-6-8-11-8-11z" fill="#C2185B"/>
+        <path d="M13 7c0 0-5 4-5 8c0 3 2.2 5 5 5s5-2 5-5c0-4-5-8-5-8z" fill="#880E4F"/>
+        <circle cx="13" cy="15" r="3.5" fill="white"/>
+        <path d="M13 9v2.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text"><strong>Caritas of Hope</strong><span>Foundation</span></div>
+  </div>
+  <div class="nav-links">
+    <button class="nb" onclick="go('home')">Home</button>
+    <button class="nb" onclick="go('about')">About</button>
+    <button class="nb" onclick="go('work')">Our Work</button>
+    <button class="nb" onclick="go('projects')">Projects</button>
+    <button class="nb" onclick="go('news')">News</button>
+    <button class="nb donate-btn" onclick="go('donate')">Donate</button>
+  </div>
+  <button class="hamburger" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <button class="nb" onclick="go('home');closeMob()">🏠 Home</button>
+  <button class="nb" onclick="go('about');closeMob()">👤 About Us</button>
+  <button class="nb" onclick="go('work');closeMob()">🌍 Our Work</button>
+  <button class="nb" onclick="go('projects');closeMob()">📋 Projects</button>
+  <button class="nb" onclick="go('news');closeMob()">📰 News & Media</button>
+  <button class="nb donate-btn" onclick="go('donate');closeMob()">💝 Donate</button>
+</div>
+
+<!-- ═══════════════ HOME ═══════════════ -->
+<div id="page-home" class="page active">
+<section class="hero">
+  <div class="hc"></div><div class="hc"></div><div class="hc"></div>
+  <div class="hero-inner">
+    <div class="hbadge"><span class="hbadge-dot"></span>Kenya-Registered NGO · Nairobi<span class="hbadge-dot"></span></div>
+    <h1>Empowering Communities,<br><em>Transforming Lives</em></h1>
+    <p class="hs">Caritas of Hope Foundation works at the intersection of health, education, humanitarian aid, inclusivity, and environmental sustainability — bringing lasting change to Kenya's most vulnerable communities.</p>
+    <div class="hero-ctas">
+      <button class="btn-w" onclick="go('work')">Explore Our Work</button>
+      <button class="btn-ol" onclick="go('donate')">Support a Child Today</button>
+    </div>
+  </div>
+</section>
+<div class="stat-bar">
+  <div class="si"><span class="sn">500+</span><span class="sl">Students Supported</span></div>
+  <div class="si"><span class="sn">25</span><span class="sl">Board Members</span></div>
+  <div class="si"><span class="sn">5</span><span class="sl">Thematic Pillars</span></div>
+  <div class="si"><span class="sn">110+</span><span class="sl">Planned Projects</span></div>
+</div>
+<section style="padding:5rem 2rem;">
+  <div class="container">
+    <div class="mission-g">
+      <div style="position:relative;">
+        <div class="mc">
+          <blockquote>"Every community deserves the dignity of health, the power of education, and the promise of a sustainable future."</blockquote>
+          <cite>— Allan Ndata Wangechi, Founder &amp; Patron</cite>
+        </div>
+        <div class="mf"><strong>2026</strong><span>Founded in Nairobi</span></div>
+      </div>
+      <div>
+        <div class="ey rv">Who We Are</div>
+        <h2 class="h2 rv">A Foundation Built on Purpose</h2>
+        <p style="color:var(--GR);line-height:1.75;margin-bottom:1.6rem;font-size:0.93rem;" class="rv">Caritas of Hope Foundation is a Kenya-registered NGO operating across five thematic pillars, governed by a 25-member Board of Directors, and committed to systemic, community-driven change in Nairobi and beyond.</p>
+        <div class="val-items">
+          <div class="vi rv"><div class="vi-ico">❤️</div><div class="vi-t"><strong>Compassion-Driven</strong><p>Every programme begins with listening — to communities, to data, to lived experience.</p></div></div>
+          <div class="vi rv"><div class="vi-ico">⚖️</div><div class="vi-t"><strong>Equity-Centred</strong><p>We prioritise those most left behind — girls, persons with disabilities, informal settlement residents.</p></div></div>
+          <div class="vi rv"><div class="vi-ico">🌍</div><div class="vi-t"><strong>Locally Anchored</strong><p>Rooted in Nairobi, powered by Kenyan expertise, aligned with Vision 2030.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--OW);padding:5rem 2rem;">
+  <div class="container">
+    <div class="tc rv" style="margin-bottom:3rem;">
+      <div class="ey">What We Do</div>
+      <h2 class="h2">Our Five Thematic Pillars</h2>
+      <p class="sub">Each pillar represents a critical dimension of community wellbeing — together forming a holistic model for lasting change.</p>
+    </div>
+    <div class="pill-g rv">
+      <div class="pill-c p-hl" onclick="go('work');spillar('health')"><div class="pill-h">🏥</div><div class="pill-b"><h3>Health</h3><p>Community healthcare, maternal health, disease prevention and wellness campaigns.</p><span class="pill-lk">Explore →</span></div></div>
+      <div class="pill-c p-ed" onclick="go('work');spillar('education')"><div class="pill-h">📚</div><div class="pill-b"><h3>Education</h3><p>Scholarships, school uniforms, digital literacy and the Bright Future Programme.</p><span class="pill-lk">Explore →</span></div></div>
+      <div class="pill-c p-hm" onclick="go('work');spillar('humanitarian')"><div class="pill-h">🤝</div><div class="pill-b"><h3>Humanitarian Aid</h3><p>Emergency response, food security, shelter provision and displacement support.</p><span class="pill-lk">Explore →</span></div></div>
+      <div class="pill-c p-in" onclick="go('work');spillar('inclusivity')"><div class="pill-h">🌈</div><div class="pill-b"><h3>Inclusivity &amp; Diversity</h3><p>Gender equity, disability inclusion, youth empowerment and social justice advocacy.</p><span class="pill-lk">Explore →</span></div></div>
+      <div class="pill-c p-en" onclick="go('work');spillar('environment')"><div class="pill-h">🌿</div><div class="pill-b"><h3>Environmental Sustainability</h3><p>Climate action, tree-planting drives, clean energy access and green initiatives.</p><span class="pill-lk">Explore →</span></div></div>
+    </div>
+  </div>
+</section>
+<div class="imp-band">
+  <h2>Our Commitment to Measurable Impact</h2>
+  <p>Every programme designed with clear outcomes, rigorous monitoring, and transparent reporting.</p>
+  <div class="imp-nums">
+    <div class="in-item"><strong>500+</strong><span>Students on Scholarships</span></div>
+    <div class="in-item"><strong>1,000+</strong><span>Uniforms Distributed</span></div>
+    <div class="in-item"><strong>22+</strong><span>Projects Per Pillar</span></div>
+    <div class="in-item"><strong>5</strong><span>University Clubs</span></div>
+  </div>
+</div>
+<section style="padding:5rem 2rem;">
+  <div class="container">
+    <div class="ey rv">Featured Projects</div>
+    <h2 class="h2 rv">Signature Programmes</h2>
+    <p class="sub rv" style="margin-bottom:2.5rem;">Two flagship initiatives currently seeking donor support and partners.</p>
+    <div class="prog-g rv">
+      <div class="prog-c pm" onclick="go('projects')"><span class="ptag">Education</span><h3>Bright Future Scholarship Programme</h3><p>A structured four-tier scholarship initiative supporting 500+ students. Donors are paired directly with named students in Diamond, Gold, Silver, and Bronze tiers.</p><div class="prog-st">📊 Target: KSh 94.4M annually</div></div>
+      <div class="prog-c ps" onclick="go('projects')"><span class="ptag">Education + Livelihoods</span><h3>Uniforms of Hope Initiative</h3><p>Providing school uniforms to children in Nairobi's informal settlements while running a vocational sewing and garment production training centre for young women.</p><div class="prog-st">🧵 Piloting across 6 months in Phase 1</div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.2rem;"><button class="btn-m rv" onclick="go('projects')">View All Projects</button></div>
+  </div>
+</section>
+<section style="background:var(--GLT);padding:5rem 2rem;">
+  <div class="container">
+    <div class="tc rv" style="margin-bottom:2.8rem;"><div class="ey">Get Involved</div><h2 class="h2">Join the Movement</h2><p class="sub">There are many ways to support Caritas of Hope Foundation and be part of lasting community change.</p></div>
+    <div class="inv-g rv">
+      <div class="inv-c"><div class="inv-ico ii1">💝</div><h3>Donate</h3><p>Support a student's education, fund a health outreach, or sponsor a community project.</p><button class="btn-m" onclick="go('donate')">Donate Now</button></div>
+      <div class="inv-c"><div class="inv-ico ii2">🙋</div><h3>Volunteer</h3><p>Join our Grassroots University Clubs or professional volunteer programme.</p><button class="btn-s" onclick="go('donate')">Sign Up</button></div>
+      <div class="inv-c"><div class="inv-ico ii3">🤝</div><h3>Partner With Us</h3><p>We welcome corporate partnerships, institutional collaborations, and co-implementation agreements.</p><button class="btn-m" onclick="go('donate')">Get in Touch</button></div>
+    </div>
+  </div>
+</section>
+<section style="padding:5rem 2rem;">
+  <div class="container">
+    <div class="ey rv">Latest Updates</div>
+    <h2 class="h2 rv" style="margin-bottom:2.2rem;">News &amp; Stories</h2>
+    <div class="ng rv">
+      <div class="nc" onclick="go('news')"><div class="ni ni1">📰</div><div class="nb2"><div class="ntag">Education</div><h3>Bright Future Programme Targets 500 Students Across All Education Levels</h3><p>Caritas of Hope Foundation launches its flagship scholarship initiative connecting donors directly with named students.</p><div class="ndate">April 2026</div></div></div>
+      <div class="nc" onclick="go('news')"><div class="ni ni2">👗</div><div class="nb2"><div class="ntag">Livelihoods</div><h3>Uniforms of Hope: Sewing Skills Centre Opens in Nairobi</h3><p>Young women gain vocational sewing training as school children receive their first uniforms.</p><div class="ndate">March 2026</div></div></div>
+      <div class="nc" onclick="go('news')"><div class="ni ni3">🏛️</div><div class="nb2"><div class="ntag">Governance</div><h3>Foundation Expands Board to 25 Members Across Five Thematic Sub-Boards</h3><p>Caritas of Hope strengthens governance with specialist board members aligned to each programme pillar.</p><div class="ndate">February 2026</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;"><button class="btn-m rv" onclick="go('news')">All News &amp; Stories</button></div>
+  </div>
+</section>
+<div class="cta-band"><h2>Be Part of Something Bigger</h2><p>Thousands of Kenyans committed to building dignified, sustainable communities — join them today.</p><div class="cta-btns"><button class="btn-w" onclick="go('donate')">Donate to a Programme</button><button class="btn-ol" onclick="go('donate')">Volunteer With Us</button></div></div>
+</div><!-- /home -->
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<div id="page-about" class="page">
+<div class="ph pt"><div class="ph-r"></div><div class="ph-r"></div><div class="ph-inner"><div class="bc"><button class="bc-link" onclick="go('home')">Home</button> › <span>About Us</span></div><h1>Who We Are</h1><p>A Foundation born from a vision of dignified, equitable, and sustainable communities — rooted in Nairobi, committed to Kenya.</p></div></div>
+<div class="page-tabs">
+  <button class="pt-btn active" onclick="stab('founder')">Our Founder</button>
+  <button class="pt-btn" onclick="stab('story')">Our Story</button>
+  <button class="pt-btn" onclick="stab('mvv')">Mission &amp; Vision</button>
+  <button class="pt-btn" onclick="stab('governance')">Governance</button>
+  <button class="pt-btn" onclick="stab('team')">Leadership Team</button>
+</div>
+<!-- FOUNDER -->
+<div id="a-founder" class="a-sub active" style="background:var(--OW);">
+  <div class="container"><div class="founder-g">
+    <div style="position:relative;"><div class="f-port"><div class="f-av">A</div></div><div class="f-badge">Founder &amp; Permanent Patron</div></div>
+    <div>
+      <div class="ey">Leadership</div>
+      <div class="f-name">Allan Ndata Wangechi</div>
+      <div class="f-title">Founder &amp; Permanent Patron — Caritas of Hope Foundation</div>
+      <p class="f-bio">Allan Ndata Wangechi is a Nairobi-based NGO professional and strategic advisor specialising in governance, board leadership, and management for nonprofit entities. With a deep passion for community development and institutional excellence, Allan founded Caritas of Hope Foundation as a vehicle for structured, multi-thematic impact across Kenya's most vulnerable populations.</p>
+      <p class="f-bio">As Permanent Founder and Patron, Allan holds the foundational vision of the organisation — driving strategy, governance architecture, and long-term programmatic direction. Under his leadership, the Foundation has developed a robust governance structure, launched flagship programmes including the Bright Future Scholarship Programme and the Uniforms of Hope Initiative, and built a 25-member Board of Directors aligned to five thematic sub-boards.</p>
+      <div class="f-quote"><blockquote>"Every community deserves the dignity of health, the power of education, and the promise of a sustainable future. Caritas of Hope exists to close the gap between that promise and reality."</blockquote></div>
+      <div class="tags"><span class="tag tm">NGO Governance</span><span class="tag tm">Strategic Leadership</span><span class="tag ts">Community Development</span><span class="tag ts">Board Management</span><span class="tag">Nairobi, Kenya</span></div>
+    </div>
+  </div></div>
+</div>
+<!-- STORY -->
+<div id="a-story" class="a-sub">
+  <div class="container">
+    <div class="tc" style="margin-bottom:3rem;"><div class="ey">Our Journey</div><h2 class="h2">The Story Behind the Foundation</h2><p class="sub">From a vision for dignified communities to a structured multi-thematic NGO — our journey.</p></div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-c"><div class="tl-yr">The Vision</div><h3>A Founder's Call to Action</h3><p>Allan Ndata Wangechi identifies the critical gap in coordinated, multi-thematic community support across Nairobi's informal settlements and conceptualises Caritas of Hope Foundation.</p></div><div class="tl-dot"><div class="tl-di">💡</div></div><div class="tl-empty"></div></div>
+      <div class="tl-item"><div class="tl-empty"></div><div class="tl-dot"><div class="tl-di sk">📋</div></div><div class="tl-c"><div class="tl-yr sk">Registration</div><h3>Official Kenya NGO Registration</h3><p>Caritas of Hope Foundation is officially registered with the NGO Coordination Board of Kenya, establishing its legal standing under Kenyan law.</p></div></div>
+      <div class="tl-item"><div class="tl-c"><div class="tl-yr">Governance</div><h3>25-Member Board Constituted</h3><p>The Foundation constitutes a 25-member Board of Directors structured across five thematic sub-boards — one of Kenya's most comprehensive governance structures for a young NGO.</p></div><div class="tl-dot"><div class="tl-di">🏛️</div></div><div class="tl-empty"></div></div>
+      <div class="tl-item"><div class="tl-empty"></div><div class="tl-dot"><div class="tl-di sk">📚</div></div><div class="tl-c"><div class="tl-yr sk">Programmes Launch</div><h3>Flagship Programmes Developed</h3><p>The Bright Future Scholarship Programme and the Uniforms of Hope Initiative are developed — targeting 500+ students and combining uniform provision with vocational skills training.</p></div></div>
+      <div class="tl-item"><div class="tl-c"><div class="tl-yr">2026 &amp; Beyond</div><h3>Scaling Impact Across All Five Pillars</h3><p>With 22+ projects per pillar, a growing Grassroots University Clubs network, and an expanding donor base, Caritas of Hope enters its full growth phase.</p></div><div class="tl-dot"><div class="tl-di">🚀</div></div><div class="tl-empty"></div></div>
+    </div>
+  </div>
+</div>
+<!-- MVV -->
+<div id="a-mvv" class="a-sub" style="background:var(--OW);">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2.8rem;"><div class="ey">Our Identity</div><h2 class="h2">Mission, Vision &amp; Values</h2></div>
+    <div class="mvv-g">
+      <div class="mvv mm"><div class="mvv-ico mi-m">🎯</div><h3>Our Mission</h3><p>To empower marginalised communities in Kenya through sustainable, dignity-centred programmes across health, education, humanitarian aid, inclusivity and diversity, and environmental sustainability — guided by compassion, equity, and community partnership.</p></div>
+      <div class="mvv ms"><div class="mvv-ico mi-s">🌅</div><h3>Our Vision</h3><p>A Kenya where every community member — regardless of background, gender, age, ability, or location — has access to the resources, opportunities, and support needed to live with dignity and realise their full potential.</p></div>
+      <div class="mvv mv"><div class="mvv-ico mi-v">⭐</div><h3>Our Core Values</h3><p>Everything we do is guided by:</p><ul class="val-list"><li>Dignity — every person treated with respect</li><li>Compassion — empathy in every interaction</li><li>Equity — prioritising those most left behind</li><li>Integrity — transparent, accountable, honest</li><li>Excellence — high standards in all programmes</li><li>Community — local voices at the centre</li></ul></div>
+    </div>
+  </div>
+</div>
+<!-- GOVERNANCE -->
+<div id="a-governance" class="a-sub">
+  <div class="container">
+    <div style="margin-bottom:2.8rem;"><div class="ey">Structure</div><h2 class="h2">Governance Architecture</h2><p class="sub">A 25-member Board organised across five specialist sub-boards — one of Kenya's most robust governance frameworks for a young NGO.</p></div>
+    <div class="gov-g">
+      <div><div class="patron-c"><div class="pat-av">A</div><h4>Allan Ndata Wangechi</h4><span>Founder &amp; Patron</span><div><span class="perm-badge">Permanent Role</span></div></div><div class="brd-stats"><div class="brd-s"><strong>25</strong><span>Board Members</span></div><div class="brd-s"><strong>5</strong><span>Sub-Boards</span></div><div class="brd-s"><strong>5</strong><span>Members per Pillar</span></div><div class="brd-s"><strong>100%</strong><span>Kenyan Leadership</span></div></div></div>
+      <div><p style="color:var(--GR);font-size:0.9rem;line-height:1.8;margin-bottom:1.6rem;">The Board is organised into five thematic sub-boards, each comprising five members with specialist expertise. Sub-board chairs sit on the full Board ensuring integrated oversight across all programmes.</p>
+      <div class="sub-bds"><div class="sbd"><div class="sbd-ico si-h">🏥</div><div class="sbd-info"><strong>Health Sub-Board</strong><span>Healthcare, maternal health, disease prevention, community wellness</span></div><span class="sbd-cnt">5 Members</span></div><div class="sbd"><div class="sbd-ico si-e">📚</div><div class="sbd-info"><strong>Education Sub-Board</strong><span>Scholarships, school programmes, digital literacy, mentorship</span></div><span class="sbd-cnt">5 Members</span></div><div class="sbd"><div class="sbd-ico si-hu">🤝</div><div class="sbd-info"><strong>Humanitarian Aid Sub-Board</strong><span>Emergency relief, food security, shelter, displacement response</span></div><span class="sbd-cnt">5 Members</span></div><div class="sbd"><div class="sbd-ico si-i">🌈</div><div class="sbd-info"><strong>Inclusivity &amp; Diversity Sub-Board</strong><span>Gender equity, disability inclusion, youth empowerment, advocacy</span></div><span class="sbd-cnt">5 Members</span></div><div class="sbd"><div class="sbd-ico si-en">🌿</div><div class="sbd-info"><strong>Environmental Sustainability Sub-Board</strong><span>Climate action, tree planting, clean energy, green initiatives</span></div><span class="sbd-cnt">5 Members</span></div></div></div>
+    </div>
+  </div>
+</div>
+<!-- TEAM -->
+<div id="a-team" class="a-sub" style="background:var(--OW);">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2.8rem;"><div class="ey">The People</div><h2 class="h2">Leadership Team</h2><p class="sub">Passionate, experienced, and driven — our leadership team brings together expertise across Kenya's development sector.</p></div>
+    <div class="team-g">
+      <div class="tm-c"><div class="tm-img bg-m"><div class="tm-av av-m">A</div></div><div class="tm-b"><h4>Allan Ndata Wangechi</h4><div class="tm-role">Founder &amp; Permanent Patron</div><span class="tm-tag">All Pillars</span></div></div>
+      <div class="tm-c"><div class="tm-img bg-s"><div class="tm-av av-s">ED</div></div><div class="tm-b"><h4>Executive Director</h4><div class="tm-role">Chief Executive</div><span class="tm-tag">Operations</span></div></div>
+      <div class="tm-c"><div class="tm-img bg-m"><div class="tm-av av-m">HC</div></div><div class="tm-b"><h4>Health Committee Chair</h4><div class="tm-role">Sub-Board Chair</div><span class="tm-tag">Health</span></div></div>
+      <div class="tm-c"><div class="tm-img bg-s"><div class="tm-av av-s">EC</div></div><div class="tm-b"><h4>Education Committee Chair</h4><div class="tm-role">Sub-Board Chair</div><span class="tm-tag">Education</span></div></div>
+      <div class="tm-c"><div class="tm-img bg-o"><div class="tm-av av-o">HA</div></div><div class="tm-b"><h4>Humanitarian Aid Chair</h4><div class="tm-role">Sub-Board Chair</div><span class="tm-tag">Humanitarian</span></div></div>
+      <div class="tm-c"><div class="tm-img bg-p"><div class="tm-av av-p">IC</div></div><div class="tm-b"><h4>Inclusivity Committee Chair</h4><div class="tm-role">Sub-Board Chair</div><span class="tm-tag">Inclusivity</span></div></div>
+    </div>
+  </div>
+</div>
+<div class="cta-band"><h2>Ready to Be Part of the Story?</h2><p>Join Kenyans committed to building dignified, sustainable communities.</p><div class="cta-btns"><button class="btn-w" onclick="go('donate')">Donate to a Programme</button><button class="btn-ol" onclick="go('donate')">Volunteer With Us</button></div></div>
+</div><!-- /about -->
+
+<!-- ═══════════════ OUR WORK ═══════════════ -->
+<div id="page-work" class="page">
+<div class="ph pt"><div class="ph-r"></div><div class="ph-r"></div><div class="ph-inner"><div class="bc"><button class="bc-link" onclick="go('home')">Home</button> › <span>Our Work</span></div><h1>Our Five Thematic Pillars</h1><p>Five interconnected programme areas — each addressing a critical dimension of community wellbeing.</p></div></div>
+<div class="pil-nav">
+  <button class="pn-btn pn-h active" onclick="spillar('health')"><span class="pi">🏥</span>Health</button>
+  <button class="pn-btn pn-e" onclick="spillar('education')"><span class="pi">📚</span>Education</button>
+  <button class="pn-btn pn-hu" onclick="spillar('humanitarian')"><span class="pi">🤝</span>Humanitarian</button>
+  <button class="pn-btn pn-i" onclick="spillar('inclusivity')"><span class="pi">🌈</span>Inclusivity</button>
+  <button class="pn-btn pn-en" onclick="spillar('environment')"><span class="pi">🌿</span>Environment</button>
+</div>
+
+<!-- HEALTH -->
+<div id="pd-health" class="pd active"><div class="container">
+  <div class="pd-g"><div class="pib pib-m"><span>🏥</span><span class="pib-lbl">Health</span></div><div class="pd-intro"><div class="ey" style="color:var(--M)">Pillar One</div><h2 class="h2">Health &amp; Community Wellness</h2><p>Access to quality healthcare remains one of the most critical barriers to human development in Kenya's informal settlements. Our Health pillar bridges the gap through outreach, education, clinic partnerships, and targeted maternal and child health programmes.</p><p>We believe health is a human right, not a privilege. Our programmes reach the most vulnerable — women, children, elderly, and persons with chronic illness — where formal health infrastructure is weakest.</p><div class="sdg-wrap"><span class="sdg" style="color:var(--M);border-color:var(--ML);background:var(--MX)">SDG 3 — Good Health</span><span class="sdg" style="color:var(--S);border-color:var(--SL);background:var(--SX)">SDG 1 — No Poverty</span><span class="sdg" style="color:var(--G);border-color:#A5D6A7;background:var(--GL)">SDG 10 — Reduced Inequalities</span></div></div></div>
+  <div class="imp-row ir-m"><div class="imp-s"><strong>10,000+</strong><span>People Reached Annually</span></div><div class="imp-s"><strong>5</strong><span>Clinic Partnerships</span></div><div class="imp-s"><strong>500+</strong><span>Mothers Supported</span></div><div class="imp-s"><strong>22+</strong><span>Planned Projects</span></div></div>
+  <h3 style="font-family:var(--fd);font-size:1.3rem;margin-bottom:1.1rem;">Core Focus Areas</h3>
+  <div class="foc-g"><div class="foc-c"><span class="fi">🤱</span><h4>Maternal &amp; Child Health</h4><p>Antenatal care support, safe delivery resources, and newborn health education for mothers in underserved areas.</p></div><div class="foc-c"><span class="fi">🩺</span><h4>Community Health Outreach</h4><p>Mobile health camps, free screenings, and preventive care delivered directly to informal settlements.</p></div><div class="foc-c"><span class="fi">💊</span><h4>Disease Prevention</h4><p>HIV/AIDS awareness, malaria prevention, TB education, and immunisation drives aligned with Kenya's national health strategy.</p></div><div class="foc-c"><span class="fi">🧠</span><h4>Mental Health First Aid</h4><p>Community-based MHFA certification with a 70-module curriculum contextualised for Kenyan settings.</p></div></div>
+  <h3 style="font-family:var(--fd);font-size:1.3rem;margin-bottom:1.1rem;">Active &amp; Planned Programmes</h3>
+  <div class="pl"><div class="pl-item"><div class="pl-num pn-m">1</div><div class="pl-text"><strong>Mental Health First Aid Certification Programme</strong><p>70-module community-facing certification course covering crisis response, psychosocial first aid, and community referral pathways.</p></div><span class="ps-st ps-a">Active</span></div><div class="pl-item"><div class="pl-num pn-m">2</div><div class="pl-text"><strong>Maternal Health Outreach — Nairobi Informal Settlements</strong><p>Antenatal care, safe birth kits, and postnatal follow-up across Kibera, Mathare, and Mukuru.</p></div><span class="ps-st ps-a">Active</span></div><div class="pl-item"><div class="pl-num pn-m">3</div><div class="pl-text"><strong>Free Community Health Screening Camps</strong><p>Quarterly health screening camps offering blood pressure, blood sugar, BMI, eye, and dental checks.</p></div><span class="ps-st ps-p">Planned</span></div><div class="pl-item"><div class="pl-num pn-m">4</div><div class="pl-text"><strong>School Health Education Programme</strong><p>Curriculum-linked health education covering hygiene, nutrition, puberty, and mental wellness for ages 8–15.</p></div><span class="ps-st ps-p">Planned</span></div></div>
+  <div class="pil-q pq-m"><div class="pq-ico">❝</div><div><blockquote>"When a mother in an informal settlement gets access to a safe birth kit and a nurse who speaks her language, the entire trajectory of that family changes."</blockquote><cite>— Caritas of Hope Foundation, Health Pillar Vision Statement</cite></div></div>
+  <div class="pcs-strip pcs-m"><div class="pcs-txt"><h3>Support the Health Pillar</h3><p>Your donation funds health camps, maternal care kits, and mental health training in Nairobi's communities.</p></div><button class="btn-wt bwt-m" onclick="go('donate')">Donate to Health →</button></div>
+</div></div>
+
+<!-- EDUCATION -->
+<div id="pd-education" class="pd" style="background:var(--OW)"><div class="container">
+  <div class="pd-g"><div class="pib pib-s"><span>📚</span><span class="pib-lbl">Education</span></div><div class="pd-intro"><div class="ey" style="color:var(--S)">Pillar Two</div><h2 class="h2">Education &amp; Learning Access</h2><p>Education is the single most powerful lever for generational change. Our Education pillar removes financial, material, and structural barriers preventing Kenya's most vulnerable children and youth from accessing quality learning — from early childhood through university.</p><p>Through the Bright Future Scholarship Programme, Uniforms of Hope Initiative, and growing digital literacy projects, we build an ecosystem of educational opportunity anchored in dignity and aspiration.</p><div class="sdg-wrap"><span class="sdg" style="color:var(--S);border-color:var(--SL);background:var(--SX)">SDG 4 — Quality Education</span><span class="sdg" style="color:var(--P);border-color:#CE93D8;background:var(--PL)">SDG 5 — Gender Equality</span><span class="sdg" style="color:var(--G);border-color:#A5D6A7;background:var(--GL)">SDG 8 — Decent Work</span></div></div></div>
+  <div class="imp-row ir-s"><div class="imp-s"><strong>500+</strong><span>Students Supported</span></div><div class="imp-s"><strong>4</strong><span>Scholarship Tiers</span></div><div class="imp-s"><strong>1,000+</strong><span>Uniforms Distributed</span></div><div class="imp-s"><strong>22+</strong><span>Planned Projects</span></div></div>
+  <h3 style="font-family:var(--fd);font-size:1.3rem;margin-bottom:1.1rem;">Core Focus Areas</h3>
+  <div class="foc-g"><div class="foc-c"><span class="fi">🎓</span><h4>Scholarships &amp; Bursaries</h4><p>Four-tier programme (Diamond, Gold, Silver, Bronze) pairing donors with students across all education levels.</p></div><div class="foc-c"><span class="fi">👕</span><h4>School Uniforms</h4><p>Provision of school uniforms to children in informal settlements — removing a key barrier to daily attendance.</p></div><div class="foc-c"><span class="fi">💻</span><h4>Digital Literacy</h4><p>Computer access, coding basics, and internet literacy for children in areas with limited technology exposure.</p></div><div class="foc-c"><span class="fi">🏫</span><h4>School Infrastructure</h4><p>Classroom rehabilitation, library stocking, WASH facilities, and learning materials provision.</p></div></div>
+  <h3 style="font-family:var(--fd);font-size:1.3rem;margin-bottom:1.1rem;">Flagship &amp; Active Programmes</h3>
+  <div class="pl"><div class="pl-item"><div class="pl-num pn-s">1</div><div class="pl-text"><strong>Bright Future Scholarship Programme</strong><p>Four-tier donor-student scholarship scheme targeting 500+ students. Diamond (University), Gold (Secondary), Silver (Primary), Bronze (ECD). Target: KSh 94.4M annually.</p></div><span class="ps-st ps-f">Flagship</span></div><div class="pl-item"><div class="pl-num pn-s">2</div><div class="pl-text"><strong>Uniforms of Hope Initiative</strong><p>School uniform provision combined with a vocational sewing and garment training centre for 50 young women. Phase 1 pilot — 6 months.</p></div><span class="ps-st ps-a">Active</span></div><div class="pl-item"><div class="pl-num pn-s">3</div><div class="pl-text"><strong>Grassroots Digital Literacy Hubs</strong><p>University club-managed digital labs providing free computer training, internet access, and coding fundamentals.</p></div><span class="ps-st ps-p">Planned</span></div><div class="pl-item"><div class="pl-num pn-s">4</div><div class="pl-text"><strong>Mentorship Bridge Programme</strong><p>University students mentoring primary and secondary scholars for academic guidance and life-skills coaching.</p></div><span class="ps-st ps-p">Planned</span></div></div>
+  <div class="pil-q pq-s"><div class="pq-ico">❝</div><div><blockquote>"A child who goes to school in a clean uniform, with books and a mentor, doesn't just learn — they believe they belong in that classroom."</blockquote><cite>— Caritas of Hope Foundation, Education Pillar Vision Statement</cite></div></div>
+  <div class="pcs-strip pcs-s"><div class="pcs-txt"><h3>Sponsor a Student's Education</h3><p>Choose a scholarship tier and be paired directly with a student whose future you will help shape.</p></div><button class="btn-wt bwt-s" onclick="go('donate')">Sponsor a Student →</button></div>
+</div></div>
+
+<!-- HUMANITARIAN -->
+<div id="pd-humanitarian" class="pd"><div class="container">
+  <div class="pd-g"><div class="pib pib-o"><span>🤝</span><span class="pib-lbl">Humanitarian Aid</span></div><div class="pd-intro"><div class="ey" style="color:var(--O)">Pillar Three</div><h2 class="h2">Humanitarian Aid &amp; Emergency Response</h2><p>When disaster strikes — floods, drought, displacement, food crisis — Caritas of Hope Foundation responds swiftly and compassionately. Our Humanitarian Aid pillar covers emergency response and long-term food security, ensuring no family faces a crisis alone.</p><div class="sdg-wrap"><span class="sdg" style="color:var(--O);border-color:#FFCC80;background:var(--OL)">SDG 2 — Zero Hunger</span><span class="sdg" style="color:var(--M);border-color:var(--ML);background:var(--MX)">SDG 1 — No Poverty</span></div></div></div>
+  <div class="imp-row ir-o"><div class="imp-s"><strong>2,000+</strong><span>Families Assisted</span></div><div class="imp-s"><strong>48hrs</strong><span>Emergency Response Time</span></div><div class="imp-s"><strong>6</strong><span>Food Security Sites</span></div><div class="imp-s"><strong>22+</strong><span>Planned Projects</span></div></div>
+  <div class="foc-g"><div class="foc-c"><span class="fi">🚨</span><h4>Emergency Response</h4><p>Rapid-deployment response to floods, fires, displacement events — food, water, and shelter within 48 hours.</p></div><div class="foc-c"><span class="fi">🌾</span><h4>Food Security</h4><p>Community food banks, nutritional support for children under 5, and school feeding in food-insecure areas.</p></div><div class="foc-c"><span class="fi">🏠</span><h4>Shelter Assistance</h4><p>Transitional shelter provision for families displaced by fires, demolitions, and natural disasters.</p></div><div class="foc-c"><span class="fi">💙</span><h4>Psychosocial Support</h4><p>Trauma-informed counselling for families and children affected by crisis and displacement events.</p></div></div>
+  <div class="pl"><div class="pl-item"><div class="pl-num pn-o">1</div><div class="pl-text"><strong>Rapid Emergency Relief Fund</strong><p>A standing fund enabling 48-hour deployment of food packs, hygiene kits, and shelter materials during crisis events.</p></div><span class="ps-st ps-a">Active</span></div><div class="pl-item"><div class="pl-num pn-o">2</div><div class="pl-text"><strong>Community Food Bank Network</strong><p>Network of 5 community food storage and distribution points across informal settlements.</p></div><span class="ps-st ps-p">Planned</span></div><div class="pl-item"><div class="pl-num pn-o">3</div><div class="pl-text"><strong>School Feeding Programme</strong><p>Daily nutritious meals for 1,000+ children in high food-insecurity schools.</p></div><span class="ps-st ps-p">Planned</span></div></div>
+  <div class="pcs-strip pcs-o"><div class="pcs-txt"><h3>Fund Emergency Relief</h3><p>Help us be ready when the next crisis hits — stock the emergency fund and feed a child today.</p></div><button class="btn-wt bwt-o" onclick="go('donate')">Donate to Humanitarian Aid →</button></div>
+</div></div>
+
+<!-- INCLUSIVITY -->
+<div id="pd-inclusivity" class="pd" style="background:var(--OW)"><div class="container">
+  <div class="pd-g"><div class="pib pib-p"><span>🌈</span><span class="pib-lbl">Inclusivity &amp; Diversity</span></div><div class="pd-intro"><div class="ey" style="color:var(--P)">Pillar Four</div><h2 class="h2">Inclusivity, Diversity &amp; Social Justice</h2><p>A just society is one in which every person — regardless of gender, disability, age, ethnicity, or socioeconomic background — can participate fully and equally. Our Inclusivity pillar champions the rights and voices of those most marginalised, building programmes that remove barriers and amplify agency.</p><div class="sdg-wrap"><span class="sdg" style="color:var(--P);border-color:#CE93D8;background:var(--PL)">SDG 5 — Gender Equality</span><span class="sdg" style="color:var(--S);border-color:var(--SL);background:var(--SX)">SDG 10 — Reduced Inequalities</span></div></div></div>
+  <div class="imp-row ir-p"><div class="imp-s"><strong>300+</strong><span>Youth Empowered</span></div><div class="imp-s"><strong>5</strong><span>University Clubs</span></div><div class="imp-s"><strong>200+</strong><span>Women Supported</span></div><div class="imp-s"><strong>22+</strong><span>Planned Projects</span></div></div>
+  <div class="foc-g"><div class="foc-c"><span class="fi">👩</span><h4>Gender Equity</h4><p>Girls' education advocacy, women's economic empowerment, and campaigns against gender-based violence.</p></div><div class="foc-c"><span class="fi">♿</span><h4>Disability Inclusion</h4><p>Ensuring all Foundation programmes are disability-inclusive by design — accessible venues, adapted materials.</p></div><div class="foc-c"><span class="fi">🧑</span><h4>Youth Leadership</h4><p>Grassroots University Clubs as youth leadership incubators — developing Kenya's next generation of change agents.</p></div><div class="foc-c"><span class="fi">📣</span><h4>Advocacy &amp; Policy</h4><p>Engaging county and national government to advocate for inclusive policies in health, education, and social protection.</p></div></div>
+  <div class="pl"><div class="pl-item"><div class="pl-num pn-p">1</div><div class="pl-text"><strong>Grassroots University Clubs Network</strong><p>Five university-based clubs serving as grassroots implementation arms and youth leadership development platforms across Nairobi campuses.</p></div><span class="ps-st ps-a">Active</span></div><div class="pl-item"><div class="pl-num pn-p">2</div><div class="pl-text"><strong>Women's Economic Empowerment Circle</strong><p>Savings-led microfinance groups, business skills training, and market linkages for women in informal settlements.</p></div><span class="ps-st ps-p">Planned</span></div><div class="pl-item"><div class="pl-num pn-p">3</div><div class="pl-text"><strong>Disability Inclusion Mainstreaming</strong><p>Reviewing and retrofitting all Foundation programmes against disability inclusion standards.</p></div><span class="ps-st ps-p">Planned</span></div></div>
+  <div class="pcs-strip pcs-p"><div class="pcs-txt"><h3>Champion Inclusion</h3><p>Support programmes that give Kenya's most marginalised communities a seat at the table.</p></div><button class="btn-wt bwt-p" onclick="go('donate')">Support Inclusivity →</button></div>
+</div></div>
+
+<!-- ENVIRONMENT -->
+<div id="pd-environment" class="pd"><div class="container">
+  <div class="pd-g"><div class="pib pib-g"><span>🌿</span><span class="pib-lbl">Environment</span></div><div class="pd-intro"><div class="ey" style="color:var(--G)">Pillar Five</div><h2 class="h2">Environmental Sustainability &amp; Climate Resilience</h2><p>The climate crisis is already reshaping lives in Kenya's cities and rural areas. Our Environment pillar builds community resilience by integrating climate action into grassroots development work — from tree-planting drives to clean energy access.</p><div class="sdg-wrap"><span class="sdg" style="color:var(--G);border-color:#A5D6A7;background:var(--GL)">SDG 13 — Climate Action</span><span class="sdg" style="color:var(--O);border-color:#FFCC80;background:var(--OL)">SDG 7 — Clean Energy</span><span class="sdg" style="color:var(--G);border-color:#A5D6A7;background:var(--GL)">SDG 15 — Life on Land</span></div></div></div>
+  <div class="imp-row ir-g"><div class="imp-s"><strong>10,000</strong><span>Trees Targeted (Yr 1)</span></div><div class="imp-s"><strong>500+</strong><span>Households on Clean Energy</span></div><div class="imp-s"><strong>5</strong><span>Green Community Sites</span></div><div class="imp-s"><strong>22+</strong><span>Planned Projects</span></div></div>
+  <div class="foc-g"><div class="foc-c"><span class="fi">🌳</span><h4>Tree Planting &amp; Reforestation</h4><p>Community tree-planting drives targeting 10,000 indigenous trees in Year 1 with Grassroots Club support.</p></div><div class="foc-c"><span class="fi">☀️</span><h4>Clean Energy Access</h4><p>Solar lamp distribution, clean cookstove programmes, and solar panel installation for community centres.</p></div><div class="foc-c"><span class="fi">♻️</span><h4>Waste Management</h4><p>Community waste collection, recycling education, and upcycling enterprise development for youth.</p></div><div class="foc-c"><span class="fi">🌊</span><h4>Climate Resilience Education</h4><p>School and community curricula on climate change, adaptation, water conservation, and sustainable agriculture.</p></div></div>
+  <div class="pl"><div class="pl-item"><div class="pl-num pn-g">1</div><div class="pl-text"><strong>10,000 Trees Initiative — Year 1</strong><p>Community-wide tree-planting programme targeting 10,000 indigenous trees across Nairobi schools and riparian zones.</p></div><span class="ps-st ps-p">Planned</span></div><div class="pl-item"><div class="pl-num pn-g">2</div><div class="pl-text"><strong>Solar Lamp &amp; Clean Cookstove Distribution</strong><p>Distributing solar lamps and efficient cookstoves to 500+ households in off-grid informal settlements.</p></div><span class="ps-st ps-p">Planned</span></div><div class="pl-item"><div class="pl-num pn-g">3</div><div class="pl-text"><strong>Green Schools Programme</strong><p>Eco-clubs in 20 schools, water harvesting systems, and climate literacy curricula.</p></div><span class="ps-st ps-p">Planned</span></div></div>
+  <div class="pil-q pq-g"><div class="pq-ico">❝</div><div><blockquote>"When we plant a tree with a child, we are planting their future. Environmental action is community action."</blockquote><cite>— Caritas of Hope Foundation, Environment Pillar Vision Statement</cite></div></div>
+  <div class="pcs-strip pcs-g"><div class="pcs-txt"><h3>Go Green With Us</h3><p>Plant a tree, power a home, or fund a Green Schools site. Every action builds a more resilient Kenya.</p></div><button class="btn-wt bwt-g" onclick="go('donate')">Support Environment →</button></div>
+</div></div>
+
+</div><!-- /work -->
+
+<!-- ═══════════════ PROJECTS ═══════════════ -->
+<div id="page-projects" class="page">
+<div class="ph pt"><div class="ph-r"></div><div class="ph-r"></div><div class="ph-inner"><div class="bc"><button class="bc-link" onclick="go('home')">Home</button> › <span>Projects &amp; Programmes</span></div><h1>Projects &amp; Programmes</h1><p>From flagship scholarships to emergency relief — every project is a commitment to tangible, measurable community change.</p></div></div>
+<div class="fil-bar">
+  <span class="fl">Filter:</span>
+  <button class="fb2 fa" data-f="all">All Projects</button>
+  <button class="fb2" data-f="health">🏥 Health</button>
+  <button class="fb2" data-f="education">📚 Education</button>
+  <button class="fb2" data-f="humanitarian">🤝 Humanitarian</button>
+  <button class="fb2" data-f="inclusivity">🌈 Inclusivity</button>
+  <button class="fb2" data-f="environment">🌿 Environment</button>
+</div>
+<section style="padding:5rem 2rem;">
+  <div class="container">
+    <div style="margin-bottom:2.2rem;"><div class="ey">Headline Initiatives</div><h2 class="h2">Flagship Programmes</h2><p class="sub">Our two signature programmes — the most developed and impactful in our portfolio.</p></div>
+    <div class="flag-g">
+      <div class="flag-c"><span class="fl-star">⭐ Flagship</span>
+        <div class="fc-top"><div class="fc-bg fc-bg-s">🎓</div><div class="fc-meta"><span class="fc-pill">📚 Education</span><h3>Bright Future Scholarship Programme</h3></div></div>
+        <div class="fc-body"><p>A structured four-tier donor-student scholarship scheme connecting philanthropists directly with named students across all levels of education in Kenya.</p>
+        <div class="fc-metas"><div class="fc-mi"><span class="fml">Target Students</span><span class="fmv">500+</span></div><div class="fc-mi"><span class="fml">Annual Target</span><span class="fmv">KSh 94.4M</span></div><div class="fc-mi"><span class="fml">Tiers</span><span class="fmv">4 (Diamond–Bronze)</span></div><div class="fc-mi"><span class="fml">Status</span><span class="fmv" style="color:var(--G)">Active</span></div></div>
+        <div class="pb-w"><div class="pb-lbs"><span>Fundraising Progress</span><span>38%</span></div><div class="pb-tr"><div class="pb-fi pbf-s" style="width:38%"></div></div></div>
+        <div class="fc-tags"><span class="fc-tag">Diamond – University</span><span class="fc-tag">Gold – Secondary</span><span class="fc-tag">Silver – Primary</span><span class="fc-tag">Bronze – ECD</span></div>
+        <button class="btn-s" onclick="go('donate')">Sponsor a Student →</button></div>
+      </div>
+      <div class="flag-c"><span class="fl-star">⭐ Flagship</span>
+        <div class="fc-top"><div class="fc-bg fc-bg-m">👗</div><div class="fc-meta"><span class="fc-pill">📚 Education + Livelihoods</span><h3>Uniforms of Hope Initiative</h3></div></div>
+        <div class="fc-body"><p>A dual-impact programme providing school uniforms to children in Nairobi's informal settlements while running a vocational sewing and garment production training centre for young women.</p>
+        <div class="fc-metas"><div class="fc-mi"><span class="fml">Phase 1</span><span class="fmv">6 Months</span></div><div class="fc-mi"><span class="fml">Uniforms</span><span class="fmv">1,000+</span></div><div class="fc-mi"><span class="fml">Trainees</span><span class="fmv">50 Women</span></div><div class="fc-mi"><span class="fml">Status</span><span class="fmv" style="color:var(--G)">Active</span></div></div>
+        <div class="pb-w"><div class="pb-lbs"><span>Phase 1 Progress</span><span>25%</span></div><div class="pb-tr"><div class="pb-fi pbf-m" style="width:25%"></div></div></div>
+        <div class="fc-tags"><span class="fc-tag">School Uniforms</span><span class="fc-tag">Vocational Training</span><span class="fc-tag">Women's Livelihoods</span></div>
+        <button class="btn-m" onclick="go('donate')">Support This Initiative →</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="padding:2rem 2rem 5rem;background:var(--OW);">
+  <div class="container">
+    <div style="margin-bottom:2.2rem;"><div class="ey">Full Portfolio</div><h2 class="h2">All Projects</h2></div>
+    <div class="apg" id="projGrid">
+      <div class="proj-c pv" data-p="health"><div class="pc-stripe stripe-m"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🧠</span><span class="pc-st ps-a">Active</span></div><h3>Mental Health First Aid Certification</h3><p>70-module community-facing certification course covering crisis response, psychosocial first aid, and referral pathways.</p><div class="pc-foot"><span class="pc-pt ppt-h">🏥 Health</span><span class="pc-lk" onclick="go('work');spillar('health')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="health"><div class="pc-stripe stripe-m"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🤱</span><span class="pc-st ps-a">Active</span></div><h3>Maternal Health Outreach — Nairobi Informal Settlements</h3><p>Antenatal care, safe birth kits, and postnatal follow-up across Kibera, Mathare, and Mukuru.</p><div class="pc-foot"><span class="pc-pt ppt-h">🏥 Health</span><span class="pc-lk" onclick="go('work');spillar('health')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="health"><div class="pc-stripe stripe-m"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🩺</span><span class="pc-st ps-p">Planned</span></div><h3>Quarterly Community Health Screening Camps</h3><p>Free blood pressure, blood sugar, BMI, eye, and dental checks delivered quarterly to informal settlements.</p><div class="pc-foot"><span class="pc-pt ppt-h">🏥 Health</span><span class="pc-lk" onclick="go('work');spillar('health')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="education"><div class="pc-stripe stripe-s"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🎓</span><span class="pc-st ps-f">Flagship</span></div><h3>Bright Future Scholarship Programme</h3><p>Four-tier donor-student scholarship scheme targeting 500+ students across all education levels.</p><div class="pc-foot"><span class="pc-pt ppt-e">📚 Education</span><span class="pc-lk" onclick="go('work');spillar('education')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="education"><div class="pc-stripe stripe-s"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">👗</span><span class="pc-st ps-a">Active</span></div><h3>Uniforms of Hope Initiative</h3><p>School uniforms for children in informal settlements + vocational sewing training for 50 young women.</p><div class="pc-foot"><span class="pc-pt ppt-e">📚 Education</span><span class="pc-lk" onclick="go('work');spillar('education')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="education"><div class="pc-stripe stripe-s"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">💻</span><span class="pc-st ps-p">Planned</span></div><h3>Grassroots Digital Literacy Hubs</h3><p>University club-managed digital labs providing free computer training and coding fundamentals.</p><div class="pc-foot"><span class="pc-pt ppt-e">📚 Education</span><span class="pc-lk" onclick="go('work');spillar('education')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="humanitarian"><div class="pc-stripe stripe-o"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🚨</span><span class="pc-st ps-a">Active</span></div><h3>Rapid Emergency Relief Fund</h3><p>A standing fund enabling 48-hour deployment of food packs, hygiene kits, and shelter materials during crisis events.</p><div class="pc-foot"><span class="pc-pt ppt-hu">🤝 Humanitarian</span><span class="pc-lk" onclick="go('work');spillar('humanitarian')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="humanitarian"><div class="pc-stripe stripe-o"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🌾</span><span class="pc-st ps-p">Planned</span></div><h3>Community Food Bank Network</h3><p>A network of 5 food storage and distribution points across informal settlements.</p><div class="pc-foot"><span class="pc-pt ppt-hu">🤝 Humanitarian</span><span class="pc-lk" onclick="go('work');spillar('humanitarian')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="inclusivity"><div class="pc-stripe stripe-p"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🎓</span><span class="pc-st ps-a">Active</span></div><h3>Grassroots University Clubs Network</h3><p>Five university-based clubs serving as grassroots implementation arms and youth leadership platforms.</p><div class="pc-foot"><span class="pc-pt ppt-i">🌈 Inclusivity</span><span class="pc-lk" onclick="go('work');spillar('inclusivity')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="inclusivity"><div class="pc-stripe stripe-p"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">👩</span><span class="pc-st ps-p">Planned</span></div><h3>Women's Economic Empowerment Circle</h3><p>Savings-led microfinance groups, business skills training, and market linkages for women in informal settlements.</p><div class="pc-foot"><span class="pc-pt ppt-i">🌈 Inclusivity</span><span class="pc-lk" onclick="go('work');spillar('inclusivity')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="environment"><div class="pc-stripe stripe-g"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">🌳</span><span class="pc-st ps-p">Planned</span></div><h3>10,000 Trees Initiative — Year 1</h3><p>Community-wide tree-planting targeting 10,000 indigenous trees across Nairobi schools and riparian zones.</p><div class="pc-foot"><span class="pc-pt ppt-en">🌿 Environment</span><span class="pc-lk" onclick="go('work');spillar('environment')">Details →</span></div></div></div>
+      <div class="proj-c pv" data-p="environment"><div class="pc-stripe stripe-g"></div><div class="pc-bd"><div class="pc-hdr"><span class="pc-ico">☀️</span><span class="pc-st ps-p">Planned</span></div><h3>Solar Lamp &amp; Clean Cookstove Distribution</h3><p>Solar lamps and efficient cookstoves to 500+ households in off-grid informal settlements.</p><div class="pc-foot"><span class="pc-pt ppt-en">🌿 Environment</span><span class="pc-lk" onclick="go('work');spillar('environment')">Details →</span></div></div></div>
+    </div>
+  </div>
+</section>
+<section style="padding:5rem 2rem;">
+  <div class="container">
+    <div style="margin-bottom:2.2rem;"><div class="ey">Financial Overview</div><h2 class="h2">Programme Budget Snapshot</h2></div>
+    <div class="bud-cs"><div class="bud-c"><span class="bc-i">🏥</span><div class="bc-p" style="color:var(--M)">Health</div><div class="bc-a" style="color:var(--M)">KSh 8.5M</div><div class="bc-s">Outreach, camps &amp; mental health</div></div><div class="bud-c"><span class="bc-i">📚</span><div class="bc-p" style="color:var(--S)">Education</div><div class="bc-a" style="color:var(--S)">KSh 94.4M</div><div class="bc-s">Scholarships + Uniforms</div></div><div class="bud-c"><span class="bc-i">🤝</span><div class="bc-p" style="color:var(--O)">Humanitarian</div><div class="bc-a" style="color:var(--O)">KSh 12M</div><div class="bc-s">Emergency fund + food banks</div></div><div class="bud-c"><span class="bc-i">🌈</span><div class="bc-p" style="color:var(--P)">Inclusivity</div><div class="bc-a" style="color:var(--P)">KSh 6.2M</div><div class="bc-s">Women's empowerment + clubs</div></div><div class="bud-c"><span class="bc-i">🌿</span><div class="bc-p" style="color:var(--G)">Environment</div><div class="bc-a" style="color:var(--G)">KSh 5.8M</div><div class="bc-s">Trees + solar + green schools</div></div></div>
+    <div class="bud-tot"><div class="bt-main"><strong>KSh 126.9M</strong><span>Total Year 1 Programme Budget · ~USD 954,000</span></div><div class="bt-bd"><div class="bt-it"><strong>110+</strong><span>Projects Planned</span></div><div class="bt-it"><strong>5</strong><span>Thematic Pillars</span></div><div class="bt-it"><strong>22+</strong><span>Projects Per Pillar</span></div></div></div>
+  </div>
+</section>
+<section style="padding:2rem 2rem 5rem;background:var(--OW);">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2.2rem;"><div class="ey">Roadmap</div><h2 class="h2">Implementation Phases</h2></div>
+    <div class="phase-g">
+      <div class="phase-c"><div class="phase-n" style="background:var(--M)">1</div><h4>Foundation &amp; Registration</h4><div class="phase-dur">✅ Completed</div><p>NGO registration, constitutional framework, Board constitution, and legal compliance fully established.</p></div>
+      <div class="phase-c"><div class="phase-n" style="background:var(--S)">2</div><h4>Flagship Programme Launch</h4><div class="phase-dur">🔄 In Progress — 2026</div><p>Active rollout of Bright Future Scholarship and Uniforms of Hope. Donor engagement and student identification underway.</p></div>
+      <div class="phase-c"><div class="phase-n" style="background:var(--O)">3</div><h4>Health &amp; Humanitarian Activation</h4><div class="phase-dur">🗓 Q3 2026</div><p>Launch of MHFA certification, maternal health outreach, and Emergency Relief Fund.</p></div>
+      <div class="phase-c"><div class="phase-n" style="background:var(--P)">4</div><h4>Inclusivity &amp; Environment Scale-Up</h4><div class="phase-dur">🗓 Q4 2026</div><p>Grassroots University Clubs operational. 10,000 Trees Initiative launched. Women's empowerment circles established.</p></div>
+      <div class="phase-c"><div class="phase-n" style="background:var(--G)">5</div><h4>Full Portfolio Activation</h4><div class="phase-dur">🗓 2027</div><p>All 22+ planned projects per pillar in active implementation across all five thematic areas.</p></div>
+      <div class="phase-c"><div class="phase-n" style="background:var(--D)">6</div><h4>Impact Measurement &amp; Scale</h4><div class="phase-dur">🗓 2027–2030</div><p>Annual impact reporting, third-party evaluation, and evidence-based scaling of highest-performing interventions.</p></div>
+    </div>
+  </div>
+</section>
+<div class="cta-band"><h2>Every Project Needs a Champion</h2><p>Behind every statistic is a child, a mother, a young woman, a community. Your support makes their story possible.</p><div class="cta-btns"><button class="btn-w" onclick="go('donate')">Donate to a Project</button><button class="btn-ol" onclick="go('work')">Explore Our Pillars</button></div></div>
+</div><!-- /projects -->
+
+<!-- ═══════════════ DONATE ═══════════════ -->
+<div id="page-donate" class="page">
+<div class="ph pt"><div class="ph-r"></div><div class="ph-r"></div><div class="ph-inner"><div class="bc"><button class="bc-link" onclick="go('home')">Home</button> › <span>Get Involved</span></div><h1>Give. Volunteer. Partner.</h1><p>Your support — whether financial, professional, or in time — directly transforms lives in Kenya's most vulnerable communities.</p></div></div>
+<section style="padding:5rem 2rem;background:var(--OW);">
+  <div class="container">
+    <div class="don-g">
+      <div class="don-card">
+        <h2>Make a Donation</h2>
+        <p>Choose an amount, select your pillar, and complete your gift. You will receive a receipt and impact update directly from us.</p>
+        <div class="amt-g">
+          <button class="amt-btn ac" data-a="500">KSh 500<span class="amt-sub">School supplies</span></button>
+          <button class="amt-btn" data-a="1000">KSh 1,000<span class="amt-sub">Uniform for 1 child</span></button>
+          <button class="amt-btn" data-a="2500">KSh 2,500<span class="amt-sub">Bronze scholarship</span></button>
+          <button class="amt-btn" data-a="5000">KSh 5,000<span class="amt-sub">Health camp slot</span></button>
+          <button class="amt-btn" data-a="10000">KSh 10,000<span class="amt-sub">Silver scholarship</span></button>
+          <button class="amt-btn" data-a="custom">Custom<span class="amt-sub">Your amount</span></button>
+        </div>
+        <input type="text" class="cust-inp" id="custAmt" placeholder="Enter custom amount (KSh)">
+        <label class="f-lbl">Direct my gift to (optional):</label>
+        <div class="pil-s">
+          <button class="pb3 ac">🏥 Health</button><button class="pb3">📚 Education</button><button class="pb3">🤝 Humanitarian</button>
+          <button class="pb3">🌈 Inclusivity</button><button class="pb3">🌿 Environment</button><button class="pb3">Where needed most</button>
+        </div>
+        <label class="f-lbl">Frequency:</label>
+        <div class="frq-tog"><button class="frq-btn ac">One-time</button><button class="frq-btn">Monthly</button><button class="frq-btn">Quarterly</button><button class="frq-btn">Annual</button></div>
+        <button class="don-sub" onclick="handleDonate()">💝 Donate Securely Now</button>
+        <div class="pay-ics"><span class="pay-ic mp">M-PESA</span><span class="pay-ic">VISA</span><span class="pay-ic">Mastercard</span><span class="pay-ic">PayPal</span></div>
+      </div>
+      <div>
+        <div class="imp-box">
+          <h3>Your Impact Calculator</h3>
+          <div class="imp-res"><div class="ir-a" id="irAmt">KSh 500</div><div class="ir-d" id="irDesc">Provides school supplies for one child for a full term — books, pens, and a pencil case.</div></div>
+        </div>
+        <div style="background:var(--W);border-radius:20px;padding:1.75rem;border:1px solid rgba(0,0,0,0.07);">
+          <h3 style="font-family:var(--fd);font-size:1.05rem;font-weight:700;margin-bottom:0.9rem;">Bright Future Scholarship Tiers</h3>
+          <div class="tier-cs">
+            <div class="tier-c"><div class="tier-ic ti-d">💎</div><div class="tier-i"><strong>Diamond Tier</strong><span>University / Tertiary Level</span></div><span class="tier-a">KSh 80,000/yr</span></div>
+            <div class="tier-c"><div class="tier-ic ti-g">🥇</div><div class="tier-i"><strong>Gold Tier</strong><span>Secondary School</span></div><span class="tier-a">KSh 45,000/yr</span></div>
+            <div class="tier-c"><div class="tier-ic ti-s">🥈</div><div class="tier-i"><strong>Silver Tier</strong><span>Primary School</span></div><span class="tier-a">KSh 18,000/yr</span></div>
+            <div class="tier-c"><div class="tier-ic ti-b">🥉</div><div class="tier-i"><strong>Bronze Tier</strong><span>Early Childhood (ECD)</span></div><span class="tier-a">KSh 8,500/yr</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="padding:5rem 2rem;">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2.5rem;"><div class="ey">Options</div><h2 class="h2">Other Ways to Give</h2><p class="sub">Beyond a direct donation, there are powerful ways to deepen your support and create lasting impact.</p></div>
+    <div class="ways-g">
+      <div class="way-c"><div class="way-ico wi-m">👧</div><h3>Sponsor a Child</h3><p>Choose a scholarship tier and be matched with a named student. Receive termly updates, photos, and reports directly from your scholar.</p><span class="way-lk" onclick="document.querySelector('.don-card').scrollIntoView({behavior:'smooth'})">Start Sponsoring →</span></div>
+      <div class="way-c"><div class="way-ico wi-s">🏢</div><h3>Corporate CSR Partnership</h3><p>Align your company's CSR objectives with measurable community impact. Full co-branded programmes and reporting included.</p><span class="way-lk" onclick="document.getElementById('partner-sec').scrollIntoView({behavior:'smooth'})">Partner With Us →</span></div>
+      <div class="way-c"><div class="way-ico wi-g">🎁</div><h3>Gift in Kind</h3><p>Donate school supplies, medical equipment, sewing machines, computers, solar lamps, or other items directly needed by our programmes.</p><span class="way-lk" onclick="toast('Contact: info@caritasofhope.org to arrange a gift in kind donation.')">Contact Us →</span></div>
+      <div class="way-c"><div class="way-ico wi-gold">📜</div><h3>Legacy Gift</h3><p>Include Caritas of Hope Foundation in your will or estate plan. A legacy gift ensures your values benefit communities for generations.</p><span class="way-lk" onclick="toast('For legacy giving enquiries, contact: info@caritasofhope.org')">Learn More →</span></div>
+    </div>
+  </div>
+</section>
+<section style="padding:5rem 2rem;background:var(--OW);" id="vol-sec">
+  <div class="container">
+    <div class="vol-g">
+      <div>
+        <div class="ey">Volunteer</div>
+        <h2 class="h2">Give Your Time &amp; Skills</h2>
+        <p class="sub" style="margin-bottom:2rem;">Whether you are a doctor, teacher, engineer, communicator, or student — your skills are needed across all five pillars.</p>
+        <div class="role-cs">
+          <div class="role-c"><div class="role-ico">🏥</div><div><strong>Health Volunteer</strong><p>Nurses, doctors, counsellors for outreach camps and mental health programmes.</p></div></div>
+          <div class="role-c"><div class="role-ico">📚</div><div><strong>Education Mentor</strong><p>University students and professionals mentoring primary and secondary scholars.</p></div></div>
+          <div class="role-c"><div class="role-ico">💻</div><div><strong>Digital Skills Trainer</strong><p>Tech-savvy volunteers teaching computer basics and coding in Digital Literacy Hubs.</p></div></div>
+          <div class="role-c"><div class="role-ico">📢</div><div><strong>Communications &amp; Media</strong><p>Photographers, content creators, and journalists documenting impact and amplifying our story.</p></div></div>
+          <div class="role-c"><div class="role-ico">🌿</div><div><strong>Environmental Champion</strong><p>Lead tree-planting drives, run Green Schools workshops, and support clean energy distribution.</p></div></div>
+        </div>
+      </div>
+      <div class="vol-form">
+        <h3>Volunteer Sign-Up</h3>
+        <p>Our team will match you with the most relevant volunteer opportunity within 5 business days.</p>
+        <div class="f-row"><div class="f-grp"><label class="f-lbl">First Name</label><input type="text" class="f-inp" placeholder="e.g. Jane"></div><div class="f-grp"><label class="f-lbl">Last Name</label><input type="text" class="f-inp" placeholder="e.g. Wanjiku"></div></div>
+        <div class="f-grp"><label class="f-lbl">Email Address</label><input type="email" class="f-inp" placeholder="jane@example.com"></div>
+        <div class="f-grp"><label class="f-lbl">Phone Number</label><input type="tel" class="f-inp" placeholder="+254 700 000 000"></div>
+        <div class="f-grp"><label class="f-lbl">Professional Background</label><input type="text" class="f-inp" placeholder="e.g. Nurse, Teacher, Developer"></div>
+        <div class="f-grp"><label class="f-lbl">Preferred Pillar</label><select class="f-sel"><option>Health &amp; Community Wellness</option><option>Education &amp; Scholarships</option><option>Humanitarian Aid</option><option>Inclusivity &amp; Diversity</option><option>Environmental Sustainability</option><option>Any — Match me where needed</option></select></div>
+        <div class="f-grp"><label class="f-lbl">Message (optional)</label><textarea class="f-ta" placeholder="Tell us about your skills and availability..."></textarea></div>
+        <button class="f-sub" onclick="toast('✅ Thank you! Your volunteer application has been received. We will contact you within 5 business days.')">Submit Volunteer Application</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="padding:5rem 2rem;" id="partner-sec">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2.5rem;"><div class="ey">Partnerships</div><h2 class="h2">Partner With Us</h2><p class="sub">Structured partnership tiers for organisations that want to co-create lasting community impact.</p></div>
+    <div class="part-g">
+      <div class="part-c"><div class="part-h ph-m"><div class="ph-ico">🌟</div><h3>Community Partner</h3></div><div class="part-b"><ul class="perks"><li class="ck-m">Logo on Foundation website</li><li class="ck-m">Annual impact report</li><li class="ck-m">Invitation to annual gala</li><li class="ck-m">Social media recognition</li><li class="ck-m">Certificate of partnership</li></ul><div class="part-price pp-m">From KSh 100,000/yr</div><button class="btn-blk bb-m" onclick="toast('Thank you! Our partnerships team will contact you within 48 hours.')">Become a Partner</button></div></div>
+      <div class="part-c"><div class="part-h ph-s"><div class="ph-ico">🏆</div><h3>Programme Sponsor</h3></div><div class="part-b"><ul class="perks"><li class="ck-s">All Community Partner benefits</li><li class="ck-s">Named programme or scholarship fund</li><li class="ck-s">Quarterly programme reports</li><li class="ck-s">Site visits &amp; community events</li><li class="ck-s">Employee volunteer days</li><li class="ck-s">Co-branded communications</li></ul><div class="part-price pp-s">From KSh 500,000/yr</div><button class="btn-blk bb-s" onclick="toast('Thank you! Our partnerships team will contact you within 48 hours.')">Sponsor a Programme</button></div></div>
+      <div class="part-c"><div class="part-h ph-g"><div class="ph-ico">💎</div><h3>Strategic Partner</h3></div><div class="part-b"><ul class="perks"><li class="ck-g">All Programme Sponsor benefits</li><li class="ck-g">Board engagement &amp; advisory role</li><li class="ck-g">Co-designed programme pillar</li><li class="ck-g">Dedicated impact dashboard</li><li class="ck-g">Joint media &amp; PR strategy</li><li class="ck-g">Priority grant proposal access</li></ul><div class="part-price pp-g">From KSh 2,000,000/yr</div><button class="btn-blk bb-g" onclick="toast('Thank you! Our partnerships team will contact you within 48 hours.')">Become a Strategic Partner</button></div></div>
+    </div>
+  </div>
+</section>
+<section style="padding:5rem 2rem;background:var(--OW);">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2.5rem;"><div class="ey">Youth Power</div><h2 class="h2">Join a Grassroots University Club</h2><p class="sub">Are you a university student in Nairobi? Join one of our five thematic clubs — the grassroots implementation engine of the Foundation.</p></div>
+    <div class="clubs-g">
+      <div class="club-c"><span class="ci">🏥</span><h4>Health Club</h4><p>Run health camps, mental health awareness drives, and first-aid training on campus and in communities.</p><span class="club-tag">Health Pillar</span></div>
+      <div class="club-c"><span class="ci">📚</span><h4>Education Club</h4><p>Mentor school students, run digital literacy sessions, and manage the scholarship student relationship programme.</p><span class="club-tag">Education Pillar</span></div>
+      <div class="club-c"><span class="ci">🤝</span><h4>Humanitarian Club</h4><p>Mobilise rapid community relief, organise food drives, and support displaced families in informal settlements.</p><span class="club-tag">Humanitarian Pillar</span></div>
+      <div class="club-c"><span class="ci">🌈</span><h4>Inclusivity Club</h4><p>Advocate for gender equity, organise inclusive events, and lead the Youth Leadership &amp; Advocacy Academy.</p><span class="club-tag">Inclusivity Pillar</span></div>
+      <div class="club-c"><span class="ci">🌿</span><h4>Environment Club</h4><p>Lead tree-planting drives, run Green Schools workshops, and champion clean energy adoption in communities.</p><span class="club-tag">Environment Pillar</span></div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;"><button class="btn-m" onclick="document.getElementById('vol-sec').scrollIntoView({behavior:'smooth'})">Apply to Join a Club →</button></p>
+  </div>
+</section>
+<div class="cta-band"><h2>Ready to Make a Difference?</h2><p>Contact us at <strong>info@caritasofhope.org</strong> or use the forms above to get started today.</p><div class="cta-btns"><button class="btn-w" onclick="document.querySelector('.don-card').scrollIntoView({behavior:'smooth'})">Donate Now</button><button class="btn-ol" onclick="document.getElementById('vol-sec').scrollIntoView({behavior:'smooth'})">Volunteer With Us</button></div></div>
+</div><!-- /donate -->
+
+<!-- ═══════════════ NEWS ═══════════════ -->
+<div id="page-news" class="page">
+<div class="ph pt"><div class="ph-r"></div><div class="ph-r"></div><div class="ph-inner"><div class="bc"><button class="bc-link" onclick="go('home')">Home</button> › <span>News &amp; Media</span></div><h1>News, Stories &amp; Media</h1><p>The latest from Caritas of Hope Foundation — programme updates, impact stories, community voices, and press coverage.</p></div></div>
+<div class="nws-filt">
+  <button class="nf-b na" data-nc="all">All</button>
+  <button class="nf-b" data-nc="health">🏥 Health</button>
+  <button class="nf-b" data-nc="education">📚 Education</button>
+  <button class="nf-b" data-nc="humanitarian">🤝 Humanitarian</button>
+  <button class="nf-b" data-nc="inclusivity">🌈 Inclusivity</button>
+  <button class="nf-b" data-nc="environment">🌿 Environment</button>
+  <button class="nf-b" data-nc="governance">🏛️ Governance</button>
+</div>
+<section style="padding:4rem 2rem;background:var(--OW);">
+  <div class="container">
+    <div class="ey" style="margin-bottom:1.4rem;">Featured Story</div>
+    <div class="feat-c">
+      <div class="feat-vis"><span class="fv-em">🎓</span><span class="fv-bd">⭐ Cover Story — April 2026</span></div>
+      <div class="feat-info">
+        <div class="fi-cat">Education · Flagship Programme</div>
+        <h2>Bright Future Scholarship Programme: 500 Students, Four Tiers, One Transformational Vision</h2>
+        <p>Caritas of Hope Foundation has officially launched its most ambitious programme to date — the Bright Future Scholarship Programme — targeting 500 students across all levels of education in Kenya. The four-tier model directly pairs donors with named students, creating personal accountability and a human connection between giver and receiver.</p>
+        <div class="feat-meta"><span>📅 April 15, 2026</span><span>🏛️ Caritas of Hope Foundation</span><span>⏱️ 5 min read</span></div>
+        <button class="btn-read" onclick="toast('Full article coming soon — subscribe to our newsletter for updates!')">Read Full Story →</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="padding:4rem 2rem;">
+  <div class="container">
+    <div style="margin-bottom:2rem;"><div class="ey">Latest Updates</div><h2 class="h2">All News &amp; Stories</h2></div>
+    <div class="ang" id="newsGrid">
+      <div class="n-c nv" data-c="education"><div class="n-img ni-s">🎓</div><div class="n-b"><div class="n-cat nc-s">Education</div><h3>Bright Future Programme Targets 500 Students Across All Levels</h3><p>Caritas of Hope Foundation launches its flagship four-tier scholarship initiative connecting donors directly with named students.</p><div class="n-ft"><span class="n-dt">April 15, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="education"><div class="n-img ni-m">👗</div><div class="n-b"><div class="n-cat nc-m">Education · Livelihoods</div><h3>Uniforms of Hope: Sewing Skills Centre Opens Phase 1 Operations</h3><p>Young women gain vocational sewing training as school children in informal settlements receive their first uniforms.</p><div class="n-ft"><span class="n-dt">March 28, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="governance"><div class="n-img ni-d">🏛️</div><div class="n-b"><div class="n-cat nc-d">Governance</div><h3>Foundation Completes 25-Member Board Across Five Thematic Sub-Boards</h3><p>Caritas of Hope formalises its governance architecture with a full 25-member Board of Directors structured across five specialist sub-boards.</p><div class="n-ft"><span class="n-dt">March 10, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="health"><div class="n-img ni-m">🧠</div><div class="n-b"><div class="n-cat nc-m">Health</div><h3>70-Module Mental Health First Aid Curriculum Contextualised for Kenyan Audiences</h3><p>The Foundation releases a comprehensive MHFA certification curriculum localised for Kenya, incorporating NACADA and WHO guidelines.</p><div class="n-ft"><span class="n-dt">February 22, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="inclusivity"><div class="n-img ni-p">🌈</div><div class="n-b"><div class="n-cat nc-p">Inclusivity</div><h3>Grassroots University Clubs Network Launches Across Five Nairobi Campuses</h3><p>Five thematic university clubs begin operations, serving as the Foundation's youth-led implementation arms.</p><div class="n-ft"><span class="n-dt">February 10, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="environment"><div class="n-img ni-g">🌳</div><div class="n-b"><div class="n-cat nc-g">Environment</div><h3>10,000 Trees Initiative: Planning Begins for Year 1 Community Planting Drive</h3><p>The Environmental sub-board begins site identification for the 10,000 indigenous trees target across Nairobi.</p><div class="n-ft"><span class="n-dt">January 30, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="humanitarian"><div class="n-img ni-o">🚨</div><div class="n-b"><div class="n-cat nc-o">Humanitarian Aid</div><h3>Emergency Relief Fund Established: Ready to Deploy Within 48 Hours</h3><p>Caritas of Hope Foundation establishes a standing Emergency Relief Fund to enable rapid response to crisis events in Nairobi.</p><div class="n-ft"><span class="n-dt">January 18, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="health"><div class="n-img ni-m">🤱</div><div class="n-b"><div class="n-cat nc-m">Health</div><h3>Maternal Health Outreach Reaches First 200 Mothers in Kibera and Mathare</h3><p>The Foundation's first maternal health outreach cycle supports 200+ mothers with antenatal care access and safe birth kits.</p><div class="n-ft"><span class="n-dt">January 5, 2026</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+      <div class="n-c nv" data-c="governance"><div class="n-img ni-d">📋</div><div class="n-b"><div class="n-cat nc-d">Governance</div><h3>Caritas of Hope Foundation Officially Registered with Kenya NGO Coordination Board</h3><p>The Foundation completes its official registration, establishing legal standing and governance framework under Kenyan law.</p><div class="n-ft"><span class="n-dt">December 2025</span><span class="n-lk" onclick="toast('Full article coming soon!')">Read →</span></div></div></div>
+    </div>
+  </div>
+</section>
+<section style="padding:4rem 2rem;background:var(--OW);">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2rem;"><div class="ey">Photo Gallery</div><h2 class="h2">Impact in Pictures</h2><p class="sub">Real moments from our communities, programmes, and events across all five thematic areas.</p></div>
+    <div class="gal-g">
+      <div class="gal-i gi1">🏥</div><div class="gal-i gi2">📚</div><div class="gal-i gi3">🌳</div>
+      <div class="gal-i gi4">🤝</div><div class="gal-i gi5">🌈</div><div class="gal-i gi6">👗</div>
+      <div class="gal-i gi7">🎓</div><div class="gal-i gi8">🌿</div><div class="gal-i gi9">💝</div>
+    </div>
+    <p style="text-align:center;margin-top:1.6rem;font-size:0.83rem;color:var(--GR);">Photography by Caritas of Hope Foundation community teams. All images used with consent. <span style="color:var(--M);font-weight:600;cursor:pointer" onclick="toast('Media pack download coming soon! Contact media@caritasofhope.org')">Download Media Pack →</span></p>
+  </div>
+</section>
+<section style="padding:4rem 2rem;">
+  <div class="container">
+    <div style="margin-bottom:2rem;"><div class="ey">Resources</div><h2 class="h2">Reports &amp; Publications</h2></div>
+    <div class="rep-g">
+      <div class="rep-c"><div class="rep-ico ri-s">📄</div><div><h4>Bright Future Scholarship — Full Proposal</h4><p>Complete proposal including budget, logical framework, tier structure, and SDG alignment.</p><div class="rep-meta"><span class="r-sz">PDF · 2.4MB</span><span class="r-dl" onclick="toast('Contact info@caritasofhope.org to receive this document.')">Download →</span></div></div></div>
+      <div class="rep-c"><div class="rep-ico ri-m">📄</div><div><h4>Uniforms of Hope — Project Proposal</h4><p>Six-month pilot budget, implementation plan, vocational training framework, and impact targets.</p><div class="rep-meta"><span class="r-sz">PDF · 1.8MB</span><span class="r-dl" onclick="toast('Contact info@caritasofhope.org to receive this document.')">Download →</span></div></div></div>
+      <div class="rep-c"><div class="rep-ico ri-g">📄</div><div><h4>Mental Health First Aid Curriculum</h4><p>70-module MHFA certification curriculum contextualised for Kenyan community settings.</p><div class="rep-meta"><span class="r-sz">PDF · 5.1MB</span><span class="r-dl" onclick="toast('Contact info@caritasofhope.org to receive this document.')">Download →</span></div></div></div>
+      <div class="rep-c"><div class="rep-ico ri-s">📄</div><div><h4>Website Development Proposal 2026</h4><p>Full institutional website proposal including budget, design specs, and implementation timeline.</p><div class="rep-meta"><span class="r-sz">DOCX · 1.2MB</span><span class="r-dl" onclick="toast('Contact info@caritasofhope.org to receive this document.')">Download →</span></div></div></div>
+      <div class="rep-c"><div class="rep-ico ri-m">📄</div><div><h4>CoHCT Fees &amp; Remuneration Policy</h4><p>College of Training fee structure, credit-unit tuition, lecturer grading, and salary scales.</p><div class="rep-meta"><span class="r-sz">PDF · 0.9MB</span><span class="r-dl" onclick="toast('Contact info@caritasofhope.org to receive this document.')">Download →</span></div></div></div>
+      <div class="rep-c"><div class="rep-ico ri-g">📄</div><div><h4>Annual Report 2026 (Coming Soon)</h4><p>Year 1 impact report covering all five thematic pillars, financial summary, and stakeholder accountability.</p><div class="rep-meta"><span class="r-sz">Available Q1 2027</span><span class="r-dl" onclick="toast('Notify me registered! We will send you the report when available.')">Notify Me →</span></div></div></div>
+    </div>
+  </div>
+</section>
+<div class="nl-sec">
+  <div class="nl-inner">
+    <div class="nl-text">
+      <h2>Stay Connected to Our Impact</h2>
+      <p>Subscribe to the Caritas of Hope Foundation newsletter and receive programme updates, impact stories, and funding opportunities directly in your inbox — monthly, no spam.</p>
+      <div class="nl-perks"><div class="nl-perk">✅ Monthly impact stories from our communities</div><div class="nl-perk">✅ Programme updates across all five pillars</div><div class="nl-perk">✅ Funding &amp; partnership announcements</div><div class="nl-perk">✅ Volunteer opportunities &amp; events</div></div>
+    </div>
+    <div class="nl-fw">
+      <h3>Subscribe to Our Newsletter</h3>
+      <input type="text" class="nl-inp" id="nlName" placeholder="Your Full Name">
+      <input type="email" class="nl-inp" id="nlEmail" placeholder="Your Email Address">
+      <p style="font-size:0.76rem;color:rgba(255,255,255,0.68);margin-bottom:0.65rem;">I'm interested in updates about:</p>
+      <div class="nl-ints">
+        <button class="nl-int ac">🏥 Health</button><button class="nl-int ac">📚 Education</button>
+        <button class="nl-int">🤝 Humanitarian</button><button class="nl-int">🌈 Inclusivity</button>
+        <button class="nl-int">🌿 Environment</button><button class="nl-int">🏛️ Governance</button>
+      </div>
+      <button class="nl-sub" onclick="handleNL()">Subscribe Now →</button>
+      <p style="font-size:0.7rem;color:rgba(255,255,255,0.52);margin-top:0.7rem;text-align:center;">Zero spam, ever. Unsubscribe at any time.</p>
+    </div>
+  </div>
+</div>
+<section style="padding:4rem 2rem;background:var(--OW);">
+  <div class="container">
+    <div class="tc" style="margin-bottom:2rem;"><div class="ey">Media</div><h2 class="h2">Press &amp; Media Coverage</h2></div>
+    <div class="press-g">
+      <div class="press-c"><div class="plogo">📰</div><h4>"A New Model for NGO Governance: Caritas of Hope's Five Sub-Board Structure"</h4><p>Feature on the Foundation's innovative governance model — one of Kenya's most structured young NGOs.</p><div class="pdate">Daily Nation · March 2026</div></div>
+      <div class="press-c"><div class="plogo">📡</div><h4>"Uniforms of Hope: The Initiative Turning Sewing into a Livelihood"</h4><p>Radio interview with Foundation leadership on the dual-impact Uniforms programme.</p><div class="pdate">KBC Radio · February 2026</div></div>
+      <div class="press-c"><div class="plogo">📱</div><h4>"Meet the Foundation Pairing Kenyan Donors Directly with Their Scholar"</h4><p>Digital feature on the Bright Future Scholarship's donor-student pairing model.</p><div class="pdate">Standard Digital · January 2026</div></div>
+    </div>
+    <div class="press-contact"><h3>📬 Media &amp; Press Enquiries</h3><p>For interview requests, press releases, photo access, or media kit downloads, contact our Communications team at <strong>media@caritasofhope.org</strong>. We respond within 24 business hours.</p></div>
+  </div>
+</section>
+<div class="cta-band"><h2>Be Part of the Story</h2><p>Every programme, every scholarship, every tree planted — it starts with someone deciding to act.</p><div class="cta-btns"><button class="btn-w" onclick="go('donate')">Donate Today</button><button class="btn-ol" onclick="go('donate')">Volunteer</button></div></div>
+</div><!-- /news -->
+
+<!-- SHARED FOOTER -->
+<footer>
+  <div class="fg">
+    <div class="fb">
+      <strong>Caritas of Hope Foundation</strong>
+      <p>A Kenya-registered NGO committed to empowering communities through health, education, humanitarian aid, inclusivity, and environmental sustainability.</p>
+      <div class="fsoc">
+        <span class="fsb" onclick="toast('Follow us on Facebook: @CaritasofHopeKE')">f</span>
+        <span class="fsb" onclick="toast('Follow us on X/Twitter: @CaritasofHopeKE')">𝕏</span>
+        <span class="fsb" onclick="toast('Follow us on Instagram: @CaritasofHopeKE')">📷</span>
+        <span class="fsb" onclick="toast('Connect on LinkedIn: Caritas of Hope Foundation')">in</span>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Our Work</h4>
+      <ul>
+        <li onclick="go('work');spillar('health')">Health</li>
+        <li onclick="go('work');spillar('education')">Education</li>
+        <li onclick="go('work');spillar('humanitarian')">Humanitarian Aid</li>
+        <li onclick="go('work');spillar('inclusivity')">Inclusivity</li>
+        <li onclick="go('work');spillar('environment')">Environment</li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Organisation</h4>
+      <ul>
+        <li onclick="go('about');stab('founder')">About Us</li>
+        <li onclick="go('about');stab('governance')">Board of Directors</li>
+        <li onclick="go('about');stab('mvv')">Mission &amp; Vision</li>
+        <li onclick="go('about');stab('team')">Leadership Team</li>
+        <li onclick="go('news')">News &amp; Media</li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li onclick="toast('Email: info@caritasofhope.org')">info@caritasofhope.org</li>
+        <li onclick="toast('Media: media@caritasofhope.org')">media@caritasofhope.org</li>
+        <li>Nairobi, Kenya</li>
+        <li onclick="go('donate')">Donate Now</li>
+        <li onclick="go('donate')">Volunteer</li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb-bot">
+    <span>© 2026 Caritas of Hope Foundation. All rights reserved. Registered NGO, Kenya.</span>
+    <span>Designed with <em>♥</em> for Community Impact</span>
+  </div>
+</footer>
+
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ── ROUTER ──────────────────────────────────────────────
+function go(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const pg = document.getElementById('page-' + id);
+  if (!pg) return;
+  pg.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  // Update nav active state using onclick attribute matching
+  document.querySelectorAll('.nav-links .nb').forEach(b => {
+    const oc = b.getAttribute('onclick') || '';
+    b.classList.toggle('active', oc.includes("go('" + id + "')"));
+  });
+  setTimeout(initReveal, 80);
+}
+
+// ── ABOUT TABS ───────────────────────────────────────────
+function stab(tab) {
+  // Ensure About page is active
+  if (!document.getElementById('page-about').classList.contains('active')) go('about');
+  document.querySelectorAll('.a-sub').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.pt-btn').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById('a-' + tab);
+  if (el) el.classList.add('active');
+  const names = {founder:'Our Founder',story:'Our Story',mvv:'Mission & Vision',governance:'Governance',team:'Leadership Team'};
+  document.querySelectorAll('.pt-btn').forEach(b => {
+    if (b.textContent.trim() === names[tab]) b.classList.add('active');
+  });
+  setTimeout(initReveal, 80);
+}
+
+// ── PILLAR NAV ───────────────────────────────────────────
+function spillar(p) {
+  // Ensure Our Work page is active
+  if (!document.getElementById('page-work').classList.contains('active')) go('work');
+  document.querySelectorAll('.pd').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.pn-btn').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById('pd-' + p);
+  if (el) el.classList.add('active');
+  const clsMap = {health:'pn-h',education:'pn-e',humanitarian:'pn-hu',inclusivity:'pn-i',environment:'pn-en'};
+  const btn = document.querySelector('.' + clsMap[p]);
+  if (btn) btn.classList.add('active');
+  setTimeout(initReveal, 80);
+}
+
+// ── PROJECT FILTER ───────────────────────────────────────
+document.querySelectorAll('.fb2').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fb2').forEach(b => b.classList.remove('fa'));
+    btn.classList.add('fa');
+    const f = btn.dataset.f;
+    document.querySelectorAll('.proj-c[data-p]').forEach(c => {
+      c.classList.toggle('pv', f === 'all' || c.dataset.p === f);
+    });
+  });
+});
+
+// ── NEWS FILTER ──────────────────────────────────────────
+document.querySelectorAll('.nf-b').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.nf-b').forEach(b => b.classList.remove('na'));
+    btn.classList.add('na');
+    const cat = btn.dataset.nc;
+    document.querySelectorAll('.n-c[data-c]').forEach(c => {
+      c.classList.toggle('nv', cat === 'all' || c.dataset.c === cat);
+    });
+  });
+});
+
+// ── DONATE FORM ──────────────────────────────────────────
+const impactMap = {
+  500:'Provides school supplies for one child for a full term — books, pens, and a pencil case.',
+  1000:'Buys a complete school uniform for one child in an informal settlement.',
+  2500:'Funds a Bronze ECD scholarship for one year.',
+  5000:'Covers a community health camp slot for 10 community members.',
+  10000:'Funds a Silver scholarship for one primary school child for a year.'
+};
+document.querySelectorAll('.amt-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('ac'));
+    btn.classList.add('ac');
+    const ci = document.getElementById('custAmt');
+    if (btn.dataset.a === 'custom') {
+      ci.style.display = 'block'; ci.focus();
+    } else {
+      ci.style.display = 'none';
+      const a = parseInt(btn.dataset.a);
+      document.getElementById('irAmt').textContent = 'KSh ' + a.toLocaleString();
+      document.getElementById('irDesc').textContent = impactMap[a] || 'Your donation directly supports Foundation programmes.';
+    }
+  });
+});
+document.querySelectorAll('.frq-btn').forEach(btn => {
+  btn.addEventListener('click', () => { document.querySelectorAll('.frq-btn').forEach(b => b.classList.remove('ac')); btn.classList.add('ac'); });
+});
+document.querySelectorAll('.pb3').forEach(btn => {
+  btn.addEventListener('click', () => { document.querySelectorAll('.pb3').forEach(b => b.classList.remove('ac')); btn.classList.add('ac'); });
+});
+document.querySelectorAll('.nl-int').forEach(btn => {
+  btn.addEventListener('click', () => btn.classList.toggle('ac'));
+});
+
+function handleDonate() {
+  const active = document.querySelector('.amt-btn.ac');
+  const ci = document.getElementById('custAmt');
+  const amt = active?.dataset.a === 'custom' ? ci.value : active?.dataset.a;
+  if (!amt || (active?.dataset.a === 'custom' && !ci.value.trim())) {
+    toast('Please select or enter a donation amount.'); return;
+  }
+  toast('🎉 Thank you! Redirecting you to secure payment... M-Pesa Paybill: 123456 · Account: COHF');
+}
+
+function handleNL() {
+  const email = document.getElementById('nlEmail')?.value;
+  const name = document.getElementById('nlName')?.value;
+  if (!email || !email.includes('@')) { toast('Please enter a valid email address.'); return; }
+  toast('✅ Subscribed! Thank you' + (name ? ', ' + name.split(' ')[0] : '') + '. Watch your inbox for our next update.');
+}
+
+// ── TOAST ────────────────────────────────────────────────
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._tid);
+  t._tid = setTimeout(() => t.classList.remove('show'), 4800);
+}
+
+// ── MOBILE NAV ───────────────────────────────────────────
+function toggleMob() { document.getElementById('mobMenu').classList.toggle('open'); }
+function closeMob() { document.getElementById('mobMenu').classList.remove('open'); }
+document.addEventListener('click', e => {
+  const menu = document.getElementById('mobMenu');
+  const ham = document.querySelector('.hamburger');
+  if (menu && ham && !menu.contains(e.target) && !ham.contains(e.target)) closeMob();
+});
+window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMob(); });
+
+// ── SCROLL REVEAL ────────────────────────────────────────
+function initReveal() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), i * 60); });
+  }, {threshold: 0.08});
+  document.querySelectorAll('.page.active .rv:not(.vis)').forEach(el => io.observe(el));
+}
+initReveal();
+
+// ── NAV SCROLL SHADOW ────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').style.boxShadow = window.scrollY > 40
+    ? '0 4px 30px rgba(194,24,91,0.45)' : '0 2px 20px rgba(194,24,91,0.35)';
+});
+</script>
+</body>
+</html>
